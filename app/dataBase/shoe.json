@@ -1,0 +1,64 @@
+[
+  { "id": "qR3kL9mX2pA", "categoryId": 1, "name": "Nike Air Zoom Pegasus 40", "price": 130, "imageUrl": "https://yesoriginal.com.ua/media/cache/catalog/products/15/4a/5f/90161495-0-670x705_-jpg-84.webp", "rating": 4.8, "sizes": [40, 41, 42, 43, 44] },
+  { "id": "vN8bC1jF5sT", "categoryId": 1, "name": "Adidas Ultraboost Light", "price": 190, "imageUrl": "https://yesoriginal.com.ua/media/cache/catalog/products/fe/32/43/90020691-0-670x705_-jpg-84.webp", "rating": 4.5, "sizes": [39, 40, 42, 45] },
+  { "id": "zP4wH7dT3rE", "categoryId": 1, "name": "Hoka Clifton 9", "price": 145, "imageUrl": "https://yesoriginal.com.ua/media/cache/catalog/products/27/9e/f5/90264500-main-670x705_-jpg-84.webp", "rating": 4.9, "sizes": [41, 42, 43, 44] },
+  { "id": "mK2xV9gN6bY", "categoryId": 1, "name": "Asics Gel-Kayano 30", "price": 160, "imageUrl": "https://yesoriginal.com.ua/media/cache/catalog/products/69/05/7d/90165502-0-670x705_-jpg-84.webp", "rating": 4.7, "sizes": [40, 41, 42, 43, 44, 45] },
+  { "id": "jF5sT1qR8kL", "categoryId": 1, "name": "New Balance Fresh Foam 1080", "price": 165, "imageUrl": "https://yesoriginal.com.ua/media/cache/catalog/products/99/6f/2d/90030124-0-670x705_-jpg-84.webp", "rating": 4.6, "sizes": [42, 43, 44] },
+  { "id": "tY7bN3mX9pA", "categoryId": 1, "name": "Brooks Ghost 15", "price": 140, "imageUrl": "https://sportano.ua/img/b52b588476b8def9e5d485faf958f16f/5/0/5059882883619_41-jpg/krosivki-dlja-bigu-cholovichi-mizuno-revolt-4-white-eventide-india-ink-1770193.jpg", "rating": 4.4, "sizes": [39, 40, 41, 42] },
+  { "id": "cW2vP8dT4rE", "categoryId": 1, "name": "Saucony Ride 16", "price": 140, "imageUrl": "https://sportano.ua/img/b52b588476b8def9e5d485faf958f16f/1/9/195021171867_23-jpg/krosivki-dlja-bigu-cholovichi-saucony-lancer-black-white-1891232.jpg", "rating": 4.2, "sizes": [40, 42, 44, 45] },
+  { "id": "hG6xV1qR3kL", "categoryId": 1, "name": "Puma Velocity Nitro 2", "price": 120, "imageUrl": "https://yesoriginal.com.ua/media/cache/catalog/products/6f/b8/6e/90267107-main-670x705_-jpg-84.webp", "rating": 4.3, "sizes": [41, 42, 43] },
+  { "id": "lK9mX5sT2pA", "categoryId": 1, "name": "Mizuno Wave Rider 27", "price": 140, "imageUrl": "https://sportano.ua/img/b52b588476b8def9e5d485faf958f16f/5/0/5059431570243_23-jpg/zhinochi-bigovi-krosivki-mizuno-wave-rider-27-shirina-chorne-derevo-snigovij-pokriv-chornij-969852.jpg", "rating": 4.5, "sizes": [39, 40, 41, 42, 43, 44] },
+  { "id": "rE4wH8bC1jF", "categoryId": 1, "name": "On Cloudsurfer", "price": 160, "imageUrl": "https://sportano.ua/img/b52b588476b8def9e5d485faf958f16f/7/6/7615537236339_23-jpg/krosivki-tenisni-cholovichi-on-the-roger-advantage-pro-clay-black-white-1680083.jpg", "rating": 4.8, "sizes": [40, 41, 43, 45] },
+
+  { "id": "pA3kL9mX2qR", "categoryId": 2, "name": "Nike LeBron 21", "price": 200, "imageUrl": "https://placehold.co/400x400/fefce8/ca8a04?text=Basket+1", "rating": 4.9, "sizes": [42, 43, 44, 45] },
+  { "id": "sT5jF1bC8vN", "categoryId": 2, "name": "Jordan Tatum 2", "price": 125, "imageUrl": "https://placehold.co/400x400/fefce8/ca8a04?text=Basket+2", "rating": 4.6, "sizes": [40, 41, 42, 43, 44] },
+  { "id": "rE3dT7wH4zP", "categoryId": 2, "name": "Adidas Trae Young 3", "price": 140, "imageUrl": "https://placehold.co/400x400/fefce8/ca8a04?text=Basket+3", "rating": 4.3, "sizes": [41, 42, 45] },
+  { "id": "bY6gN9xV2mK", "categoryId": 2, "name": "Puma MB.03", "price": 125, "imageUrl": "https://placehold.co/400x400/fefce8/ca8a04?text=Basket+4", "rating": 4.7, "sizes": [39, 40, 41, 42] },
+  { "id": "kL8qR1sT5jF", "categoryId": 2, "name": "Under Armour Curry 11", "price": 160, "imageUrl": "https://placehold.co/400x400/fefce8/ca8a04?text=Basket+5", "rating": 4.8, "sizes": [42, 43, 44, 45] },
+  { "id": "pA9mX3bN7tY", "categoryId": 2, "name": "Nike KD 16", "price": 160, "imageUrl": "https://placehold.co/400x400/fefce8/ca8a04?text=Basket+6", "rating": 4.5, "sizes": [40, 41, 42, 43] },
+  { "id": "rE4dT8vP2cW", "categoryId": 2, "name": "Jordan Zion 3", "price": 140, "imageUrl": "https://placehold.co/400x400/fefce8/ca8a04?text=Basket+7", "rating": 4.4, "sizes": [41, 43, 44, 45] },
+  { "id": "kL3qR1xV6hG", "categoryId": 2, "name": "New Balance TWO WXY v4", "price": 120, "imageUrl": "https://placehold.co/400x400/fefce8/ca8a04?text=Basket+8", "rating": 4.6, "sizes": [40, 41, 42, 43, 44] },
+  { "id": "pA2sT5mX9lK", "categoryId": 2, "name": "Anta KT9", "price": 130, "imageUrl": "https://placehold.co/400x400/fefce8/ca8a04?text=Basket+9", "rating": 4.2, "sizes": [41, 42, 43] },
+  { "id": "jF1bC8wH4rE", "categoryId": 2, "name": "Li-Ning Way of Wade 10", "price": 225, "imageUrl": "https://placehold.co/400x400/fefce8/ca8a04?text=Basket+10", "rating": 5.0, "sizes": [40, 42, 44] },
+
+  { "id": "aB1cD2eF3gH", "categoryId": 3, "name": "Nike Metcon 9", "price": 150, "imageUrl": "https://placehold.co/400x400/eff6ff/1d4ed8?text=Training+1", "rating": 4.8, "sizes": [39, 40, 41, 42, 43, 44] },
+  { "id": "iJ4kL5mN6oP", "categoryId": 3, "name": "Reebok Nano X3", "price": 140, "imageUrl": "https://placehold.co/400x400/eff6ff/1d4ed8?text=Training+2", "rating": 4.7, "sizes": [40, 41, 42, 45] },
+  { "id": "qR7sT8uV9wX", "categoryId": 3, "name": "Under Armour TriBase Reign 5", "price": 130, "imageUrl": "https://placehold.co/400x400/eff6ff/1d4ed8?text=Training+3", "rating": 4.5, "sizes": [41, 42, 43, 44] },
+  { "id": "yZ0aB1cD2eF", "categoryId": 3, "name": "Puma Fuse 2.0", "price": 100, "imageUrl": "https://placehold.co/400x400/eff6ff/1d4ed8?text=Training+4", "rating": 4.1, "sizes": [39, 40, 42] },
+  { "id": "gH3iJ4kL5mN", "categoryId": 3, "name": "NOBULL Trainer", "price": 130, "imageUrl": "https://placehold.co/400x400/eff6ff/1d4ed8?text=Training+5", "rating": 4.9, "sizes": [40, 41, 42, 43, 44] },
+  { "id": "oP6qR7sT8uV", "categoryId": 3, "name": "Adidas Dropset 2", "price": 130, "imageUrl": "https://placehold.co/400x400/eff6ff/1d4ed8?text=Training+6", "rating": 4.4, "sizes": [41, 42, 43, 45] },
+  { "id": "wX9yZ0aB1cD", "categoryId": 3, "name": "Inov-8 F-Lite 245", "price": 140, "imageUrl": "https://placehold.co/400x400/eff6ff/1d4ed8?text=Training+7", "rating": 4.6, "sizes": [40, 42, 43, 44] },
+  { "id": "eF2gH3iJ4kL", "categoryId": 3, "name": "Nike Zoom TR", "price": 100, "imageUrl": "https://placehold.co/400x400/eff6ff/1d4ed8?text=Training+8", "rating": 4.2, "sizes": [39, 41, 43] },
+  { "id": "mN5oP6qR7sT", "categoryId": 3, "name": "TYR CXT-1 Trainer", "price": 150, "imageUrl": "https://placehold.co/400x400/eff6ff/1d4ed8?text=Training+9", "rating": 4.8, "sizes": [40, 41, 42, 43, 44, 45] },
+  { "id": "uV8wX9yZ0aB", "categoryId": 3, "name": "RAD One", "price": 150, "imageUrl": "https://placehold.co/400x400/eff6ff/1d4ed8?text=Training+10", "rating": 4.9, "sizes": [42, 43, 44] },
+
+
+{ "id": "bC1dE2fG3hI", "categoryId": 4, "name": "Nike Air Force 1 '07", "price": 115, "imageUrl": "https://placehold.co/400x400/fce7f3/be185d?text=Lifestyle+1", "rating": 4.9, "sizes": [39, 40, 41, 42, 43, 44, 45] },
+  { "id": "jK4lM5nO6pQ", "categoryId": 4, "name": "Adidas Samba OG", "price": 100, "imageUrl": "https://placehold.co/400x400/fce7f3/be185d?text=Lifestyle+2", "rating": 4.8, "sizes": [40, 41, 42, 43] },
+  { "id": "rS7tU8vW9xY", "categoryId": 4, "name": "New Balance 550", "price": 110, "imageUrl": "https://placehold.co/400x400/fce7f3/be185d?text=Lifestyle+3", "rating": 4.7, "sizes": [39, 41, 42, 44] },
+  { "id": "zA0bC1dE2fG", "categoryId": 4, "name": "Puma Suede Classic", "price": 75, "imageUrl": "https://placehold.co/400x400/fce7f3/be185d?text=Lifestyle+4", "rating": 4.5, "sizes": [40, 41, 42, 43, 44] },
+  { "id": "hI3jK4lM5nO", "categoryId": 4, "name": "Converse Chuck 70", "price": 90, "imageUrl": "https://placehold.co/400x400/fce7f3/be185d?text=Lifestyle+5", "rating": 4.6, "sizes": [39, 40, 41, 42] },
+  { "id": "pQ6rS7tU8vW", "categoryId": 4, "name": "Vans Old Skool", "price": 70, "imageUrl": "https://placehold.co/400x400/fce7f3/be185d?text=Lifestyle+6", "rating": 4.7, "sizes": [40, 42, 43, 44, 45] },
+  { "id": "xY9zA0bC1dE", "categoryId": 4, "name": "Reebok Club C 85", "price": 85, "imageUrl": "https://placehold.co/400x400/fce7f3/be185d?text=Lifestyle+7", "rating": 4.4, "sizes": [41, 42, 43] },
+  { "id": "fG2hI3jK4lM", "categoryId": 4, "name": "Asics Gel-Lyte III", "price": 130, "imageUrl": "https://placehold.co/400x400/fce7f3/be185d?text=Lifestyle+8", "rating": 4.8, "sizes": [39, 40, 41, 42, 43, 44] },
+  { "id": "nO5pQ6rS7tU", "categoryId": 4, "name": "Nike Dunk Low", "price": 115, "imageUrl": "https://placehold.co/400x400/fce7f3/be185d?text=Lifestyle+9", "rating": 4.5, "sizes": [40, 41, 43, 45] },
+  { "id": "vW8xY9zA0bC", "categoryId": 4, "name": "Adidas Gazelle", "price": 100, "imageUrl": "https://placehold.co/400x400/fce7f3/be185d?text=Lifestyle+10", "rating": 4.6, "sizes": [39, 42, 44] },
+
+  { "id": "cD1eF2gH3iJ", "categoryId": 5, "name": "Nike Romaleos 4", "price": 200, "imageUrl": "https://placehold.co/400x400/dcfce7/15803d?text=Gym+1", "rating": 4.9, "sizes": [40, 41, 42, 43, 44] },
+  { "id": "kL4mN5oP6qR", "categoryId": 5, "name": "Adidas Adipower 3", "price": 220, "imageUrl": "https://placehold.co/400x400/dcfce7/15803d?text=Gym+2", "rating": 4.7, "sizes": [41, 42, 43, 44] },
+  { "id": "sT7uV8wX9yZ", "categoryId": 5, "name": "Reebok Legacy Lifter III", "price": 220, "imageUrl": "https://placehold.co/400x400/dcfce7/15803d?text=Gym+3", "rating": 4.6, "sizes": [39, 40, 42, 45] },
+  { "id": "aB0cD1eF2gH", "categoryId": 5, "name": "Do-Win Weightlifting", "price": 95, "imageUrl": "https://placehold.co/400x400/dcfce7/15803d?text=Gym+4", "rating": 4.3, "sizes": [40, 41, 42, 43, 44, 45] },
+  { "id": "iJ3kL4mN5oP", "categoryId": 5, "name": "TYR L-1 Lifter", "price": 200, "imageUrl": "https://placehold.co/400x400/dcfce7/15803d?text=Gym+5", "rating": 4.8, "sizes": [42, 43, 44] },
+  { "id": "qR6sT7uV8wX", "categoryId": 5, "name": "Nike SuperRep Go 3", "price": 100, "imageUrl": "https://placehold.co/400x400/dcfce7/15803d?text=Gym+6", "rating": 4.2, "sizes": [39, 40, 41, 42] },
+  { "id": "yZ9aB0cD1eF", "categoryId": 5, "name": "Under Armour Project Rock 6", "price": 160, "imageUrl": "https://placehold.co/400x400/dcfce7/15803d?text=Gym+7", "rating": 4.5, "sizes": [41, 43, 44, 45] },
+  { "id": "gH2iJ3kL4mN", "categoryId": 5, "name": "Puma PWRFrame TR 2", "price": 90, "imageUrl": "https://placehold.co/400x400/dcfce7/15803d?text=Gym+8", "rating": 4.4, "sizes": [40, 41, 42, 43] },
+  { "id": "oP5qR6sT7uV", "categoryId": 5, "name": "Asics Upcourt 5", "price": 60, "imageUrl": "https://placehold.co/400x400/dcfce7/15803d?text=Gym+9", "rating": 4.0, "sizes": [39, 41, 42, 44] },
+  { "id": "wX8yZ9aB0cD", "categoryId": 5, "name": "Mizuno TC-11", "price": 140, "imageUrl": "https://placehold.co/400x400/dcfce7/15803d?text=Gym+10", "rating": 4.6, "sizes": [40, 41, 42, 43, 44, 45] }
+
+
+
+
+
+]
+
+
