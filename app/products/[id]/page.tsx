@@ -5,6 +5,12 @@ import Link from 'next/link';
 import shoesData from '../../dataBase/shoe.json';
 
 
+export async function generateStaticParams() {
+  return shoesData.map((shoe) => ({
+    id: String(shoe.id), // Обязательно преобразуем в строку
+  }));
+}
+
 const ProductPage = async ({ params }: { params: Promise<{ id: string }> }) => {
   
   
