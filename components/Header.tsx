@@ -1,57 +1,75 @@
 'use client'
-
-import React from 'react'
+import { motion, useScroll, useMotionValueEvent } from "framer-motion";
+import React, { useState } from 'react'
 import { Button } from './ui/button'
 import Image from 'next/image'
 import logo from "../app/img/logo.png"
 import Link from 'next/link'
 import useCartStore from '@/store/useCartStore'
 const Header = () => {
+
+
+
+const [isScrolled, setIsScrolled] = useState(false);
+ 
   const amount = useCartStore((state) => state.amount);
+const { scrollY } = useScroll();
+
+
+useMotionValueEvent(scrollY, "change", (latest) => {
+    if (latest > 20) {
+      setIsScrolled(true);
+    } else {
+      setIsScrolled(false);
+    }
+  });
   return (
-    <header className="mt-2 mx-5  flex justify-between  h-17 ">
+    <motion.header
+    className={`sticky top-0 mt-2 mx-5 flex justify-between z-50 h-17 transition-colors duration-300 ${
+        isScrolled ? 'bg-gray-100 shadow-sm' : 'bg-white'
+      }`}>
         <div className="flex  justify-center items-center  ">
-          <Image src={logo} className="w-50 h-30" alt="logo" />
+          <Link href="/"><Image src={logo} className="w-50 h-17 object-cover object-right" alt="logo" /></Link>
         </div>
         <div className="flex  justify-center items-center  ">
           <Button
-            className="text-[20px] tracking-widest font-bold "
+            className=" cursor-pointer text-[20px] tracking-widest font-bold "
             variant="ghost"
           >
             Каталог
           </Button>
           <Button
-            className="text-[20px] tracking-widest font-bold "
+            className=" cursor-pointer text-[20px] tracking-widest font-bold "
             variant="ghost"
           >
             Бренды
           </Button>
           <Button
-            className="text-[20px] tracking-widest font-bold "
+            className=" cursor-pointer text-[20px] tracking-widest font-bold "
             variant="ghost"
           >
             Новинки
           </Button>
           <Button
-            className="text-[20px] tracking-widest font-bold "
+            className=" cursor-pointer text-[20px] tracking-widest font-bold "
             variant="ghost"
           >
             Акции
           </Button>
           <Button
-            className="text-[20px] tracking-widest font-bold "
+            className=" cursor-pointer text-[20px] tracking-widest font-bold "
             variant="ghost"
           >
             Технологии
           </Button>
           <Button
-            className="text-[20px] tracking-widest font-bold "
+            className=" cursor-pointer text-[20px] tracking-widest font-bold "
             variant="ghost"
           >
             О нас
           </Button>
           <Button
-            className="text-[20px] tracking-widest font-bold "
+            className=" cursor-pointer text-[20px] tracking-widest font-bold "
             variant="ghost"
           >
             Доставка
@@ -98,7 +116,7 @@ const Header = () => {
           </button>
           </Link>
         </div>
-      </header>
+      </motion.header>
   )
 }
 

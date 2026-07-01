@@ -20,6 +20,7 @@ import {
 import CategoriesUnderShoes from "@/components/CategoriesUnderShoes";
 import InfoBadge from "@/components/InfoBadge";
 import TechnologiesSection from "@/components/TechnologiesSection";
+import Footer from "@/components/Footer";
 
 export default function Home() {
   const buttonID = useSportsStore((state) => state.buttonIDs);
@@ -69,6 +70,8 @@ export default function Home() {
         ))}
       </div>
       <TechnologiesSection />
+
+      <Footer />
     </div>
   );
 }
