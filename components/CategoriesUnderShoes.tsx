@@ -1,7 +1,7 @@
 'use client'
 
 
-import { Categories } from '@/app/types/types'
+import { Categories } from '@/types/types'
 import React from 'react'
 import { motion } from 'framer-motion'
 

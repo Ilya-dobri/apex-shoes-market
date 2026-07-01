@@ -2,8 +2,8 @@
 import Link from 'next/link';
 
 
-import shoesData from '../../dataBase/shoe.json';
 
+import shoesData from "@/dataBase/shoe.json"
 
 export async function generateStaticParams() {
   return shoesData.map((shoe) => ({

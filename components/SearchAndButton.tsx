@@ -2,7 +2,7 @@
 
 
 import BattonWithClick from './Batton';
-import useSportsStore from '@/app/store/useSportsStore';
+import useSportsStore from '@/store/useSportsStore';
 
  
 

@@ -1,17 +1,16 @@
 "use client";
 import { Button } from "@/components/ui/button";
 
-import logo from "./img/logo.png";
 
 import { useEffect, useState } from "react";
-import useSportsStore from "./store/useSportsStore"
+import useSportsStore from "@/store/useSportsStore"
 import BattonWithClick from "@/components/Batton";
 import SearchAndButton from "@/components/SearchAndButton";
 import Shoes from "@/components/Shoes";
-import Categories from "./dataBase/categories.json"
+import Categories from "@/dataBase/categories.json"
 
 
-import shoe from "./dataBase/shoe.json"
+import shoe from "@/dataBase/shoe.json"
 import Header from "@/components/Header";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import CategoriesUnderShoes from "@/components/CategoriesUnderShoes";
