@@ -4,15 +4,20 @@ import Link from 'next/link';
 
 
 import shoesData from "@/dataBase/shoe.json"
+import useCartStore from '@/store/useCartStore';
+import { AddToCartButton } from '@/components/AddToCartButton';
+import SizesLogic from '@/components/SizesLogic';
+import ProductActions from '@/components/ProductActions';
+
 
 export async function generateStaticParams() {
   return shoesData.map((shoe) => ({
     id: String(shoe.id), // Обязательно преобразуем в строку
   }));
 }
-
+ 
 const ProductPage = async ({ params }: { params: Promise<{ id: string }> }) => {
-  
+ 
   
   const resolvedParams = await params;
   const currentId = resolvedParams.id;
@@ -20,7 +25,7 @@ const ProductPage = async ({ params }: { params: Promise<{ id: string }> }) => {
 
   const product = shoesData.find((shoe) => String(shoe.id) === String(currentId));
 
- 
+
   if (!product) {
     return (
       <div className="flex flex-col items-center justify-center h-screen">
@@ -29,7 +34,7 @@ const ProductPage = async ({ params }: { params: Promise<{ id: string }> }) => {
       </div>
     );
   }
-
+  
   
   return (
     <div className="max-w-4xl mx-auto p-8">
@@ -65,18 +70,17 @@ const ProductPage = async ({ params }: { params: Promise<{ id: string }> }) => {
 
           <div>
             <h3 className="font-bold mb-2">Доступные размеры:</h3>
-            <div className="flex gap-2">
+            {/* <div className="flex gap-2">
               {product.sizes.map((size) => (
-                <span key={size} className="border border-gray-300 rounded-lg px-4 py-2 hover:border-black cursor-pointer">
-                  {size}
-                </span>
+                <div key={size} className="border border-gray-300 rounded-lg px-4 py-2 hover:border-black cursor-pointer">
+                 <button className="text-gray-700 font-semibold">{size}</button>
+                </div>
               ))}
-            </div>
+            </div> */}
+           
           </div>
-          
-          <button className="mt-8 bg-black text-white py-4 rounded-xl font-bold hover:bg-gray-800 transition-colors">
-            Добавить в корзину
-          </button>
+          <ProductActions product={product} />
+        
         </div>
       </div>
     </div>

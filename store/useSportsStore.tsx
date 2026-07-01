@@ -22,6 +22,7 @@ const useSportsStore = create<UseSportsStoreType>()(
           categoryId: 0
         },
       ],
+      
       cart: 0,
       errors: [],
       buttonIDs: null, // Начальное значение - ничего не выбрано

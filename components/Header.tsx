@@ -1,9 +1,13 @@
+'use client'
+
 import React from 'react'
 import { Button } from './ui/button'
 import Image from 'next/image'
 import logo from "../app/img/logo.png"
 import Link from 'next/link'
+import useCartStore from '@/store/useCartStore'
 const Header = () => {
+  const amount = useCartStore((state) => state.amount);
   return (
     <header className="mt-2 mx-5  flex justify-between  h-17 ">
         <div className="flex  justify-center items-center  ">
@@ -89,7 +93,7 @@ const Header = () => {
             </svg>
            <span className="text-sm font-medium">Корзина</span>
             <div className="flex items-center justify-center w-7 h-7 ml-1 bg-white text-[#5A6052] rounded-full text-sm font-bold">
-              0
+              {amount}
             </div>
           </button>
           </Link>
