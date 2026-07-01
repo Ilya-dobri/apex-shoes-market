@@ -38,7 +38,7 @@ const ProductPage = async ({ params }: { params: Promise<{ id: string }> }) => {
   
   return (
     <div className="max-w-4xl mx-auto p-8">
-      <Link href="/" className="text-gray-500 hover:text-black mb-6 inline-block">
+      <Link href="/catalog" className="text-gray-500 hover:text-black mb-6 inline-block">
         ← Назад в каталог
       </Link>
       
@@ -69,14 +69,7 @@ const ProductPage = async ({ params }: { params: Promise<{ id: string }> }) => {
           </div>
 
           <div>
-            <h3 className="font-bold mb-2">Доступные размеры:</h3>
-            {/* <div className="flex gap-2">
-              {product.sizes.map((size) => (
-                <div key={size} className="border border-gray-300 rounded-lg px-4 py-2 hover:border-black cursor-pointer">
-                 <button className="text-gray-700 font-semibold">{size}</button>
-                </div>
-              ))}
-            </div> */}
+           
            
           </div>
           <ProductActions product={product} />

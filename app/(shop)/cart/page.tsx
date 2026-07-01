@@ -17,11 +17,11 @@ const page = () => {
       
       <ul>
         {items.map((item) => (
-          <li key={item.id}>
+          <li key={`${item.id}-${item.size}`}>
             {item.name}, {item.size} — {item.quantity} -  шт. 
-            <button onClick={() => updateQuantity(item.id, item.quantity - 1)}>-</button>
-            <button onClick={() => updateQuantity(item.id, item.quantity + 1)}>+</button>
-            <button onClick={() => removeItem(item.id)}>Удалить</button>
+            <button onClick={() => updateQuantity(item.id, item.size, item.quantity - 1)}>-</button>
+            <button onClick={() => updateQuantity(item.id, item.size, item.quantity + 1)}>+</button>
+            <button onClick={() => removeItem(item.id, item.size)}>Удалить</button>
           </li>
         ))}
       </ul>
