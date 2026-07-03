@@ -20,8 +20,8 @@ useEffect(() => {
         
         try {
           // Делаем запрос к коллекции "users", ищем документ с ID = uid
-          const docRef = doc(db, "users", uid);
-          const docSnap = await getDoc(docRef);
+          c
+          const docSnap = await getDoc(doc(db, "users", uid));
 
           if (docSnap.exists()) {
             // Данные найдены! Сохраняем их в состояние

@@ -19,7 +19,9 @@ import CategoriesUnderShoes from "@/components/CategoriesUnderShoes";
 import InfoBadge from "@/components/InfoBadge";
 import TechnologiesSection from "@/components/TechnologiesSection";
 import Footer from "@/components/Footer";
-import { getCategoriesFromDB, getShoesFromDB } from "@/components/FireStore/addShoeToDB";
+import { getMasiveCategoriesFromDB, getShoesFromDB } from "@/components/FireStore/addComponentToDB";
+
+
 
 // Проверь путь! В прошлый раз мы писали эту функцию в dataBase/shoesService.ts
 
@@ -50,7 +52,7 @@ export default function Home() {
   useEffect(() => {
     const fetchCategories = async () => {
       try {
-        setCategories(await getCategoriesFromDB())
+        setCategories(await getMasiveCategoriesFromDB())
 
       }catch (error) {
         console.error("Ошибка при получении категорий:", error);

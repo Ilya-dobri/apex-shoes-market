@@ -36,18 +36,18 @@ export const getShoesFromDB = async () => {
 };
 
 
-export const getCategoriesFromDB = async () => {
+export const getMasiveCategoriesFromDB = async () => {
   try {
-    const querySnapshot = await getDocs(collection(db, "categories"));
+    const querySnapshots = await getDocs(collection(db, `categories`));
+
     const categoriesList: any[] = [];
 
-    querySnapshot.forEach((doc) => {
+    querySnapshots.forEach((doc) =>{
       categoriesList.push({ id: doc.id, ...doc.data() });
     })
     return categoriesList;
-  } catch (error) {
+  }catch (error) {
     console.error("Ошибка при получении категорий:", error);
-    return [];
-  }
-};
-
+    return []; 
+}
+}
