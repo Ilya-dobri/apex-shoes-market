@@ -9,7 +9,7 @@ export interface AddToCartButtonProps {
     name: string;
     price: number;
     size: string;
-   
+    imageUrl: string;
   };
 }
 
@@ -20,7 +20,7 @@ const handleAdd = () => {
     console.log("Клик по кнопке! Товар:", product); 
     
     // 2. Вызываем метод стора
-    addItem({ id: product.id, name: product.name, price: product.price, size: product.size });
+    addItem({ id: product.id, name: product.name, price: product.price, size: product.size, imageUrl: product.imageUrl });
     
     // 3. Выводим текущее состояние корзины, чтобы убедиться, что товар туда попал
     console.log("Текущая корзина:", useCartStore.getState().items);

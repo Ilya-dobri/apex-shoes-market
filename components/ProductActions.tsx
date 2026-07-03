@@ -11,6 +11,7 @@ export interface ProductActionsProps {
     name: string;
     price: number;
     sizes: (string | number)[];
+    imageUrl: string;
   };
 }
 
@@ -35,7 +36,8 @@ const ProductActions = ({ product }: ProductActionsProps) => {
       id: String(product.id), 
       name: product.name, 
       price: product.price, 
-      size: String(selectedSize) 
+      size: String(selectedSize),
+      imageUrl: product.imageUrl
     });
 
     // 3. Выводим текущее состояние корзины

@@ -1,11 +1,14 @@
 'use client'
 import { motion, useScroll, useMotionValueEvent } from "framer-motion";
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Button } from './ui/button'
 import Image from 'next/image'
 import logo from "../app/img/logo.png"
 import Link from 'next/link'
 import useCartStore from '@/store/useCartStore'
+import { onAuthStateChanged } from "firebase/auth";
+import { auth, db } from '@/dataBase/firebaseConfig';
+import { doc, getDoc } from "firebase/firestore";
 const Header = () => {
 
 
@@ -14,7 +17,22 @@ const [isScrolled, setIsScrolled] = useState(false);
  
   const amount = useCartStore((state) => state.amount);
 const { scrollY } = useScroll();
-
+    const [userData, setUserData] = useState<any>(null);
+      const [loading, setLoading] = useState(true);
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, async (currentUser) => {
+      if (currentUser) {
+        const uid = currentUser.uid;
+        const docSnap = await getDoc(doc(db, "users", uid));
+        if (docSnap.exists()) {
+          setUserData(docSnap.data());
+        }
+      } else {
+        setUserData(null);
+      }
+    });
+    return () => unsubscribe();
+  }, []);
 
 useMotionValueEvent(scrollY, "change", (latest) => {
     if (latest > 20) {
@@ -76,7 +94,7 @@ useMotionValueEvent(scrollY, "change", (latest) => {
           </Button>
         </div>
         <div className="flex gap-5  justify-center items-center ">
-          <button className="flex justify-center items-center w-40 h-14 gap-2 bg-gray-200 rounded-full border border-gray-100 text-gray-700 transition-colors hover:border-gray-400 hover:bg-gray-300">
+          <Link href="/authorisation"><button className="flex justify-center items-center w-40 h-14 gap-2 bg-gray-200 rounded-full border border-gray-100 text-gray-700 transition-colors hover:border-gray-400 hover:bg-gray-300">
             <svg
               className="w-5 h-5 text-gray-500"
               fill="none"
@@ -91,8 +109,12 @@ useMotionValueEvent(scrollY, "change", (latest) => {
                 d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
               ></path>
             </svg>
-            <span className="text-sm font-medium">Войти</span>
-          </button>
+            {userData ? (
+              <span className="text-sm font-medium">{userData.name}</span>
+            ) : ( 
+              <span className="text-sm font-medium">Войти</span>
+            )}
+          </button></Link>
 
           <Link href={"/cart"}> <button className="flex justify-center items-center  w-40 h-15 gap-2 pl-5 pr-1.5 py-1.5 bg-[#5A6052] rounded-full text-white hover:bg-[#4b5144] transition-colors">
             <svg

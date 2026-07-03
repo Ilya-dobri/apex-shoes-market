@@ -1,9 +1,10 @@
 'use client'
 
 
+import { useEffect, useState } from 'react';
 import BattonWithClick from './Batton';
 import useSportsStore from '@/store/useSportsStore';
-
+import { getCategoriesFromDB } from "@/components/FireStore/addShoeToDB";
  
 
  
@@ -120,6 +121,22 @@ import useSportsStore from '@/store/useSportsStore';
 
 
 const SearchAndButton = () => {
+    // const [categories, setCategories] = useState<any[]>([]);
+    // const [loading, setLoading] = useState(true);
+      // useEffect(() => {
+      //   const fetchCategories = async () => {
+      //     try {
+      //       setCategories(await getCategoriesFromDB())
+      //     }catch (error) {
+      //       console.error("Ошибка при получении категорий:", error);
+      //     }finally {
+      //       console.log("Категории успешно получены:", categories);
+      //       setLoading(false);
+      //     }
+      //   }
+      //   fetchCategories();
+      // }, [])
+    
      const buttonID = useSportsStore(state => state.buttonIDs)
   const addButonID = useSportsStore(state => state.addButtonId)
   return (
