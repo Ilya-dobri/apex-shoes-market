@@ -54,7 +54,7 @@ const ProductActions = ({ product }: ProductActionsProps) => {
       <div className="mb-4">
         <h3 className="font-bold mb-2">Доступные размеры:</h3>
         <div className="flex gap-2">
-          {product.sizes.map((size) => {
+          {product.sizes?.map((size) => {
             // Переводим size в строку для надежного сравнения
             const sizeStr = String(size);
             const isSelected = selectedSize === sizeStr;

@@ -1,32 +1,31 @@
 
 import Link from 'next/link';
+import { collection, getDocs, doc, getDoc } from "firebase/firestore";
+import { db } from '@/dataBase/firebaseConfig';
 
-
-
-import shoesData from "@/dataBase/shoe.json"
-import useCartStore from '@/store/useCartStore';
-import { AddToCartButton } from '@/components/AddToCartButton';
-import SizesLogic from '@/components/SizesLogic';
 import ProductActions from '@/components/ProductActions';
 
 
 export async function generateStaticParams() {
-  return shoesData.map((shoe) => ({
-    id: String(shoe.id), // Обязательно преобразуем в строку
+  const querySnapshot = await getDocs(collection(db, "shoes"));
+  
+  // Берем id документов прямо из Firebase Firestore
+  return querySnapshot.docs.map((doc) => ({
+    id: doc.id, 
   }));
 }
  
-const ProductPage = async ({ params }: { params: Promise<{ id: string }> }) => {
+const ProductPage = async ({ params }: any) => {
  
-  
+
   const resolvedParams = await params;
   const currentId = resolvedParams.id;
 
 
-  const product = shoesData.find((shoe) => String(shoe.id) === String(currentId));
+const docRef = doc(db, "shoes", currentId);
+  const docSnap = await getDoc(docRef);
 
-
-  if (!product) {
+  if (!docSnap.exists()) {
     return (
       <div className="flex flex-col items-center justify-center h-screen">
         <h1 className="text-2xl font-bold mb-4">Упс, такой кроссовок не найден 😢</h1>
@@ -35,7 +34,7 @@ const ProductPage = async ({ params }: { params: Promise<{ id: string }> }) => {
     );
   }
   
-  
+  const product = { id: docSnap.id, ...docSnap.data() } as any;
   return (
     <div className="max-w-4xl mx-auto p-8">
       <Link href="/catalog" className="text-gray-500 hover:text-black mb-6 inline-block">
@@ -60,7 +59,7 @@ const ProductPage = async ({ params }: { params: Promise<{ id: string }> }) => {
           </h1>
           
           <div className="text-2xl font-extrabold text-gray-900 mb-6">
-            {product.price.toLocaleString('ru-RU')} ₽
+            {product.price.toLocaleString('uk-UA')} 
           </div>
 
           <div className="flex items-center gap-2 mb-6">

@@ -12,7 +12,7 @@ const SizesLogic = ({ product }: { product: any }) => {
   return (
     <div>
       <div className="flex gap-2">
-        {product.sizes.map((size: string) => (
+        {product.sizes?.map((size: string) => (
           <button
             key={size}
             onClick={() => setSelectedSize(size)}

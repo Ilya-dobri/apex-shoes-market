@@ -14,11 +14,11 @@ const Header = () => {
 
 
 const [isScrolled, setIsScrolled] = useState(false);
- 
-  const amount = useCartStore((state) => state.amount);
+
+
 const { scrollY } = useScroll();
     const [userData, setUserData] = useState<any>(null);
-      const [loading, setLoading] = useState(true);
+  
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, async (currentUser) => {
       if (currentUser) {
@@ -41,6 +41,8 @@ useMotionValueEvent(scrollY, "change", (latest) => {
       setIsScrolled(false);
     }
   });
+  const items = useCartStore((state) => state.items);
+   const totalCount = items.reduce((sum, item) => sum + item.quantity, 0);
   return (
     <motion.header
     className={`sticky top-0 mt-2 mx-5 flex justify-between z-50 h-17 transition-colors duration-300 ${
@@ -133,7 +135,7 @@ useMotionValueEvent(scrollY, "change", (latest) => {
             </svg>
            <span className="text-sm font-medium">Корзина</span>
             <div className="flex items-center justify-center w-7 h-7 ml-1 bg-white text-[#5A6052] rounded-full text-sm font-bold">
-              {amount}
+              {totalCount}
             </div>
           </button>
           </Link>

@@ -44,29 +44,28 @@ const useCartStore = create<CartState>()(
             amount: state.amount + 1,
           };
         }),
-      removeItem: (id, size, imageUrl) =>
-        set((state) => {
-          const target = state.items.find((item) => item.id === id && item.size === size && item.imageUrl === imageUrl);
-          if (!target) return state;
+     removeItem: (id, size, imageUrl) =>
+  set((state) => {
+    const target = state.items.find((item) => item.id === id && item.size === size && item.imageUrl === imageUrl);
+    if (!target) return state;
 
-          if (target.quantity > 1) {
-            // просто уменьшаем количество на 1
-            return {
-              items: state.items.map((item) =>
-                item.id === id && item.size === size && item.imageUrl === imageUrl
-                  ? { ...item, quantity: item.quantity - 1 }
-                  : item
-              ),
-              amount: state.amount - 1,
-            };
-          }
-       
-          // quantity === 1 — удаляем товар полностью
-          return {
-            items: state.items.filter((item) => !(item.id === id && item.size === size && item.imageUrl === imageUrl)),
-            amount: state.amount - 1,
-          };
-        }),
+    if (target.quantity > 1) {
+      return {
+        items: state.items.map((item) =>
+          item.id === id && item.size === size && item.imageUrl === imageUrl
+            ? { ...item, quantity: item.quantity - 1 }
+            : item
+        ),
+        amount: state.amount - 1, // Тут всё ок
+      };
+    }
+ 
+    // quantity === 1 — удаляем товар полностью
+    return {
+      items: state.items.filter((item) => !(item.id === id && item.size === size && item.imageUrl === imageUrl)),
+      amount: state.amount - target.quantity, // <- Вычитаем реальное количество (хоть оно и 1), но для надежности лучше target.quantity
+    };
+  }),
       updateQuantity: (id, size, quantity) =>
         set((state) => ({
           items: state.items.map((item) =>

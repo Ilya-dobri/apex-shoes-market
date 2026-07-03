@@ -1,8 +1,11 @@
 "use client";
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import useCartStore from '@/store/useCartStore';
 import Link from 'next/link'
+import { addDoc, collection, doc, getDoc, setDoc } from 'firebase/firestore';
+import { db, auth } from '@/dataBase/firebaseConfig';
+import { onAuthStateChanged } from 'firebase/auth';
 // Расширенный интерфейс продукта для корзины
 export interface CartProduct {
   id: string;
@@ -22,6 +25,77 @@ export default function MockCartItems() {
   const removeItem = useCartStore((state) => state.removeItem);
   const updateQuantity = useCartStore((state) => state.updateQuantity);
   const totalPrice = items.reduce((total, item) => total + item.price * item.quantity, 0);
+  const [isProcessing, setIsProcessing] = React.useState(false);
+  const [cartItems, setCartItems] = React.useState<CartProduct[]>([]);
+
+
+
+
+  const handleCheckout = async () => {
+    if (items.length === 0) return;
+    setIsProcessing(true);
+    const currentUser = auth.currentUser;
+    if (!currentUser) {
+      alert('Пожалуйста, войдите в систему перед оплатой.');
+      setIsProcessing(false);
+      return;
+    }
+    const uid = currentUser.uid;
+    try {
+      const docSnap = await getDoc(doc(db, "users", uid));
+      const currentUserId = docSnap.data()?.userId || uid;
+
+    const orderRef = await addDoc(collection(db, "orders"), {
+      userId: currentUserId,     // ID твоего пользователя из БД или Auth
+      userUid: uid,              // Firebase Auth UID для надежности связки
+      products: items,           // Твой массив items прямо из Zustand стора
+      totalAmount: totalPrice,   // Итоговая сумма заказа
+      status: 'pending',         // Статус «Ожидает оплаты»
+      createdAt: new Date(),     // Дата и время создания заказа
+    });
+      
+
+      // 1. Запрашиваем подпись у нашего Next.js API роута
+      const res = await fetch('/api/liqpay-callback', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          amount: totalPrice,
+          userId: currentUserId,
+          orderId: orderRef.id
+        }),
+      });
+
+      if (!res.ok) throw new Error('Ошибка создания сессии платежа');
+
+      const { data, signature } = await res.json();
+
+      // 2. Создаем невидимую форму и отправляем её на эквайринг LiqPay
+      const form = document.createElement('form');
+      form.method = 'POST';
+      form.action = 'https://www.liqpay.ua/api/3/checkout';
+      form.acceptCharset = 'utf-8';
+
+      const dataInput = document.createElement('input');
+      dataInput.type = 'hidden';
+      dataInput.name = 'data';
+      dataInput.value = data;
+      form.appendChild(dataInput);
+
+      const signInput = document.createElement('input');
+      signInput.type = 'hidden';
+      signInput.name = 'signature';
+      signInput.value = signature;
+      form.appendChild(signInput);
+
+      document.body.appendChild(form);
+      form.submit();
+    } catch (error) {
+      console.error('Ошибка редиректа на LiqPay:', error);
+      alert('Не удалось запустить процесс оплаты. Попробуйте позже.');
+      setIsProcessing(false);
+    }
+  };
   
   return (
 
@@ -119,7 +193,7 @@ export default function MockCartItems() {
               </div>
 
               {/* Главная кнопка в фирменном оливковом цвете (#646C55) */}
-              <button className="w-full bg-[#646C55] hover:bg-[#535A46] text-white py-4 rounded-full font-semibold text-lg transition-colors shadow-lg shadow-[#646c55]/20">
+              <button onClick={handleCheckout} className="w-full bg-[#646C55] hover:bg-[#535A46] text-white py-4 rounded-full font-semibold text-lg transition-colors shadow-lg shadow-[#646c55]/20">
                 Перейти к оформлению
               </button>
               

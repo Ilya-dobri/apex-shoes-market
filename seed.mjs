@@ -69,7 +69,7 @@ async function uploadCategories() {
  
     for (let i = 0; i < categoriesData.length; i++) {
       const category = categoriesData[i]
-        const { id, ...cleanData } = category;
+        const { id, ...cleanData } = category;z
         try {
             await addDoc(collection(db, "categories"), cleanData);
             } catch (error) {
