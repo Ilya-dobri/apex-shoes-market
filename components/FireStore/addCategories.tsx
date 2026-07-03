@@ -2,15 +2,6 @@ import { collection, addDoc, getDocs } from "firebase/firestore";
 import { db } from "../../dataBase/firebaseConfig";
 
 // Функция для добавления (её мы уже использовали)
-export const addCategories = async (CategoriesData: any) => { 
-  try {
-    const docRef = await addDoc(collection(db, "categories"), CategoriesData);
-    return docRef.id;
-  } catch (error) {
-    console.error("Ошибка при добавлении в базу:", error);
-    throw error;
-  }
-};
 
 // НОВАЯ ФУНКЦИЯ: Получение всех кроссовок
 export const getShoesFromDB = async () => {
@@ -34,3 +25,20 @@ export const getShoesFromDB = async () => {
     return []; // Возвращаем пустой массив при ошибке, чтобы сайт не сломался
   }
 };
+
+
+export const getMasiveCategoriesFromDB = async () => {
+  try {
+    const querySnapshots = await getDocs(collection(db, `categories`));
+
+    const categoriesList: any[] = [];
+
+    querySnapshots.forEach((doc) =>{
+      categoriesList.push({ id: doc.id, ...doc.data() });
+    })
+    return categoriesList;
+  }catch (error) {
+    console.error("Ошибка при получении категорий:", error);
+    return []; // Возвращаем пустой массив при ошибке, чтобы сайт не сломался
+}
+}

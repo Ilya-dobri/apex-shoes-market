@@ -5,6 +5,7 @@ import { useRouter } from 'next/navigation';
 import React, { useEffect, useState } from 'react'
 import { auth, db } from '@/dataBase/firebaseConfig';
 import { doc, getDoc } from 'firebase/firestore';
+import AddProductForm from './FireStore/addProductForm';
 const Profile = () => {
 const router = useRouter();
     const [userData, setUserData] = useState<any>(null);
@@ -91,6 +92,26 @@ const handleLogout = async () => {
           Выйти из аккаунта
         </button>
       </div>
+
+      {userData?.role === 'admin' ? (
+          <div className="p-5 mt-4 bg-green-50 border border-green-200 rounded-2xl">
+            <h2 className="font-bold text-green-800 text-lg">Панель администратора</h2>
+            <p className="text-sm text-green-700 mb-2">
+              Тебе доступны функции управления магазином.
+            </p>
+            
+            {/* Вызываем нашу новую форму! */}
+            <AddProductForm />
+            
+          </div>
+        ) : (
+          <div className="p-5 mt-4 bg-blue-50 border border-blue-200 rounded-2xl">
+            <h2 className="font-bold text-blue-800 mb-2">Мои заказы</h2>
+            <p className="text-sm text-blue-600">
+              Здесь будут отображаться купленные кроссовки.
+            </p>
+          </div>
+        )}
     </div>
   );
 };

@@ -42,6 +42,8 @@ async function uploadData() {
 const rawData = fs.readFileSync("./dataBase/shoe.json", "utf-8");
 const shoesData = JSON.parse(rawData);
   
+await clearCollection("shoes");
+
   for (let i = 0; i < shoesData.length; i++) {
     const shoe = shoesData[i];
     
@@ -60,7 +62,7 @@ const shoesData = JSON.parse(rawData);
   process.exit(); // Завершаем работу скрипта
 }
 async function uploadCategories() {
-  const rawData = fs.readFileSync("./dataBase/db.json", "utf-8");
+  const rawData = fs.readFileSync("./dataBase/categories.json", "utf-8");
   const categoriesData = JSON.parse(rawData);
 
   await clearCollection("categories");
@@ -81,5 +83,5 @@ async function uploadCategories() {
 
 
 // Запускаем
-// uploadData();
+//  uploadData();
 uploadCategories();

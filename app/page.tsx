@@ -6,7 +6,7 @@ import useSportsStore from "@/store/useSportsStore";
 
 import SearchAndButton from "@/components/SearchAndButton";
 import Shoes from "@/components/Shoes";
-import Categories from "@/dataBase/categories.json";
+
 
 import {
   Carousel,
@@ -19,13 +19,14 @@ import CategoriesUnderShoes from "@/components/CategoriesUnderShoes";
 import InfoBadge from "@/components/InfoBadge";
 import TechnologiesSection from "@/components/TechnologiesSection";
 import Footer from "@/components/Footer";
-import { getShoesFromDB } from "@/components/FireStore/addShoeToDB";
+import { getCategoriesFromDB, getShoesFromDB } from "@/components/FireStore/addShoeToDB";
 
 // Проверь путь! В прошлый раз мы писали эту функцию в dataBase/shoesService.ts
 
 
 export default function Home() {
   const buttonID = useSportsStore((state) => state.buttonIDs);
+  const [categories, setCategories] = useState<any[]>([]);
   
   // 2. Создаем состояния для хранения кроссовок и статуса загрузки
   const [shoes, setShoes] = useState<any[]>([]);
@@ -45,7 +46,20 @@ export default function Home() {
     };
 
     fetchShoes();
-  }, []); // Пустой массив = загрузить 1 раз при открытии страницы
+  }, []); 
+  useEffect(() => {
+    const fetchCategories = async () => {
+      try {
+        setCategories(await getCategoriesFromDB())
+
+      }catch (error) {
+        console.error("Ошибка при получении категорий:", error);
+      }finally {
+        console.log("Категории успешно получены:", categories);
+      }
+    }
+    fetchCategories();
+  }, [])
 
   return (
     <div className="min-h-screen w-full bg-[#FBF9FE] text-black ">
@@ -83,7 +97,7 @@ export default function Home() {
       </div>
 
       <div className="w-full max-w-[1500px] items-center mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 px-4 mt-12">
-        {Categories.map((c) => (
+        {categories.map((c) => (
           <CategoriesUnderShoes key={c.id} {...c} />
         ))}
       </div>
