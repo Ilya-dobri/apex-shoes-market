@@ -39,7 +39,24 @@ export default function OrderSuccessPage() {
 
     updateOrderStatus();
   }, [orderId]);
-
+  
+{status === 'error' && (
+          <div className="space-y-6">
+            <div className="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto text-red-600 text-3xl">
+              ✕
+            </div>
+            <h1 className="text-2xl font-bold text-gray-900">Что-то пошло не так</h1>
+            <p className="text-gray-500 text-sm">
+              Не удалось обновить статус заказа или ссылка недействительна.
+            </p>
+            <Link 
+              href="/" 
+              className="block w-full bg-gray-200 hover:bg-gray-300 text-gray-800 py-3 rounded-full font-semibold transition-colors text-center"
+            >
+              Вернуться в магазин
+            </Link>
+          </div>
+        )}
   return (
     <div className="min-h-screen bg-[#F8F9FA] flex items-center justify-center font-sans px-4">
       <div className="bg-white p-8 rounded-[32px] shadow-sm max-w-md w-full text-center">
@@ -67,23 +84,7 @@ export default function OrderSuccessPage() {
           </div>
         )}
 
-        {status === 'error' && (
-          <div className="space-y-6">
-            <div className="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto text-red-600 text-3xl">
-              ✕
-            </div>
-            <h1 className="text-2xl font-bold text-gray-900">Что-то пошло не так</h1>
-            <p className="text-gray-500 text-sm">
-              Не удалось обновить статус заказа или ссылка недействительна.
-            </p>
-            <Link 
-              href="/" 
-              className="block w-full bg-gray-200 hover:bg-gray-300 text-gray-800 py-3 rounded-full font-semibold transition-colors text-center"
-            >
-              Вернуться в магазин
-            </Link>
-          </div>
-        )}
+        
       </div>
     </div>
   );
