@@ -39,7 +39,7 @@ export default function OrderSuccessPage() {
 
     updateOrderStatus();
   }, [orderId]);
-  
+
 {status === 'error' && (
           <div className="space-y-6">
             <div className="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto text-red-600 text-3xl">
@@ -57,14 +57,7 @@ export default function OrderSuccessPage() {
             </Link>
           </div>
         )}
-  return (
-    <div className="min-h-screen bg-[#F8F9FA] flex items-center justify-center font-sans px-4">
-      <div className="bg-white p-8 rounded-[32px] shadow-sm max-w-md w-full text-center">
-        {status === 'loading' && (
-          <div className="space-y-4">
-            <p className="text-xl font-medium text-gray-900">Проверяем статус оплаты...</p>
-          </div>
-        )}
+
 
         {status === 'success' && (
           <div className="space-y-6">
@@ -83,6 +76,16 @@ export default function OrderSuccessPage() {
             </Link>
           </div>
         )}
+  return (
+    <div className="min-h-screen bg-[#F8F9FA] flex items-center justify-center font-sans px-4">
+      <div className="bg-white p-8 rounded-[32px] shadow-sm max-w-md w-full text-center">
+        {status === 'loading' && (
+          <div className="space-y-4">
+            <p className="text-xl font-medium text-gray-900">Проверяем статус оплаты...</p>
+          </div>
+        )}
+
+        
 
         
       </div>
