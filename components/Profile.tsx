@@ -20,7 +20,7 @@ useEffect(() => {
         
         try {
           // Делаем запрос к коллекции "users", ищем документ с ID = uid
-          c
+          
           const docSnap = await getDoc(doc(db, "users", uid));
 
           if (docSnap.exists()) {
