@@ -23,7 +23,7 @@ const BattonWithClick = ({
     <button
       id={id.toString()}
       onClick={onClick}
-      className={`flex items-center w-39 gap-2 justify-center rounded-full text-[15px] font-medium transition-all duration-200 whitespace-nowrap
+      className={`flex items-center md:w-39 h-10 gap-2  justify-center rounded-full text-[15px] font-medium transition-all duration-200 whitespace-nowrap
         ${
           isSelected
             ? "bg-[#5c6350] text-white shadow-md"

@@ -126,10 +126,10 @@ const SearchAndButton = () => {
      const buttonID = useSportsStore(state => state.buttonIDs)
   const addButonID = useSportsStore(state => state.addButtonId)
   return (
-    <div className="flex  flex-col xl:flex-row items-center gap-4 w-full p-4 font-sans">
+    <div className="md:flex  md:flex-col xl:flex-row items-center gap-4 w-full p-4 font-sans">
         {/* 1. Блок поиска */}
-        <div className="flex m-auto  w-[85%]  justify-between  gap-20">
-          <div className=" flex items-center bg-white border border-gray-200 rounded-full p-1.5 w-140  shadow-sm flex-shrink-0">
+        <div className="md:flex md:m-auto  md:w-[85%]  justify-between  gap-20">
+          <div className=" flex items-center bg-white border border-gray-200 rounded-full p-1.5 md:w-140  shadow-sm flex-shrink-0">
           <div className="pl-3 pr-2 text-gray-400">
             <svg
               width="18"
@@ -164,7 +164,7 @@ const SearchAndButton = () => {
           </button>
         </div>
 
-        <div className="flex gap-5">
+        <div className="flex flex-col md:flex-row gap-3 pt-4 md:gap-5">
           {categories.map((cat) => (
             <BattonWithClick
               key={cat.id}
