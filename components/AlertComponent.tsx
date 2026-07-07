@@ -17,6 +17,7 @@ const AlertComponent = ({ title, description, isVisible }: AlertComponentProps) 
     <AnimatePresence>
       {isVisible && (
        
+        // Теперь мы можем передавать ему пропсы анимации.
         <motion.div
           
           initial={{ 
