@@ -212,8 +212,9 @@ const handleLogout = async () => {
        <div>
         <h1>избраные</h1>
         {favorite.map((f) => (
-          <div key={f}>
+          <div key={f.id}>
               <h1>{f.name}</h1>
+              
           </div>
         ))}
 

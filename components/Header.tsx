@@ -76,7 +76,7 @@ const Header = () => {
       <div className="flex gap-2 lg:gap-5 justify-center items-center">
         
         {/* Войти / Профиль */}
-        <Link href="/authorisation">
+        <Link href="/authorisation/profile">
           <button className="
             flex justify-center items-center rounded-full border border-gray-100 text-gray-700 transition-colors hover:border-gray-400 hover:bg-gray-300 bg-gray-200
             /* ТЕЛЕФОН: компактная круглая кнопка, скрываем текст */
