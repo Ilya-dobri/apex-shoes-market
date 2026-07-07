@@ -64,7 +64,7 @@ const [error, setError] = useState('');
         setError('Неверная электронная почта или пароль');
       }
     } finally {
-      setIsLoading(false); // Обязательно выключаем загрузку в конце
+      setIsLoading(false); 
     }
   };
 
