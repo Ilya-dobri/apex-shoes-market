@@ -1,0 +1,28 @@
+name: AI Code Review on Push
+
+on:
+  push:
+    branches:
+      - main
+      
+
+jobs:
+  review:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: write
+     
+
+    steps:
+      - name: Скачиваем код репозитория
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
+      - name: Запуск ChatGPT Code Review
+        uses: anc95/ChatGPT-CodeReview@main
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          LANGUAGE: Russian
