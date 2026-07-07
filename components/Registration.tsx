@@ -69,7 +69,7 @@ const Registration = () => {
         uid: user.uid,
         name: user.displayName,
         email: email,
-        role: "user", // Базовая роль для новых клиентов
+        role: "user", 
         createdAt: new Date()
       });
     router.push('/authorisation/profile')

@@ -68,8 +68,11 @@ export default function Home() {
       <InfoBadge />
       <SearchAndButton />
       
+     
       <div className=" mx-auto md:w-full  px-8 md:max-w-[1600px] md:min-[2000px]:max-w-[2200px] min-[2300px] max-w-[82%]">
-        
+         <div className="w-full h-full text-3xl p-3 ">
+        <h1>Хиты продаж</h1>
+      </div>
         {/* 4. Показываем загрузку, пока ждем ответ от Firebase */}
         {isLoading ? (
           <div className="text-center py-20 text-2xl font-bold">

@@ -60,8 +60,7 @@ const Header = () => {
         </Link>
       </div>
 
-      {/* НАВИГАЦИЯ (Только для ПК) */}
-      {/* Свойство hidden прячет меню на телефонах. lg:flex показывает его только на больших экранах */}
+ 
       <div className="hidden lg:flex justify-center items-center gap-1">
         <Button className="cursor-pointer text-[18px] xl:text-[20px] tracking-widest font-bold" variant="ghost">Каталог</Button>
         <Button className="cursor-pointer text-[18px] xl:text-[20px] tracking-widest font-bold" variant="ghost">Бренды</Button>

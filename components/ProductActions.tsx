@@ -1,10 +1,9 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import useCartStore from "@/components/store/useCartStore";
+import AlertComponent from "./AlertComponent";
 
-// Описываем интерфейс пропсов. В 'sizes' приходит массив всех размеров из базы,
-// а остальные данные нужны для кнопки добавления.
 export interface ProductActionsProps {
   product: {
     id: string | number;
@@ -16,14 +15,17 @@ export interface ProductActionsProps {
 }
 
 const ProductActions = ({ product }: ProductActionsProps) => {
-  // Локальное состояние: хранит один конкретный размер, по которому кликнул пользователь
   const [selectedSize, setSelectedSize] = useState<string | null>(null);
   
-  // Достаем функцию добавления из Zustand
+  // 1. Создаем стейт для управления видимостью красивого алерта
+  const [showAlert, setShowAlert] = useState(false);
+  
+  // 2. Создаем реф для хранения ID таймера (защита от багов при частом клике)
+  const timerRef = useRef<NodeJS.Timeout | null>(null);
+
   const addItem = useCartStore((state) => state.addItem);
 
   const handleAdd = () => {
-    // 1. Не пускаем дальше, если размер не выбран
     if (!selectedSize) {
       alert("Пожалуйста, выберите размер!");
       return;
@@ -31,7 +33,6 @@ const ProductActions = ({ product }: ProductActionsProps) => {
 
     console.log("Клик по кнопке! Товар:", product.name, "| Размер:", selectedSize);
 
-    // 2. Отправляем в стор данные + ВЫБРАННЫЙ размер
     addItem({ 
       id: String(product.id), 
       name: product.name, 
@@ -40,12 +41,30 @@ const ProductActions = ({ product }: ProductActionsProps) => {
       imageUrl: product.imageUrl
     });
 
-    // 3. Выводим текущее состояние корзины
     console.log("Текущая корзина:", useCartStore.getState().items);
     
-    // Временный визуальный отклик
-    alert(`Товар ${product.name} (размер ${selectedSize}) добавлен в корзину!`);
+    // --- МАГИЯ ТАЙМЕРА ТУТ ---
+    
+    // Сначала принудительно показываем алерт
+    setShowAlert(true);
+
+    // Если таймер уже был запущен (например, от предыдущего клика), сбрасываем его
+    if (timerRef.current) {
+      clearTimeout(timerRef.current);
+    }
+
+    // Запускаем новый таймер на 5000 миллисекунд (5 секунд)
+    timerRef.current = setTimeout(() => {
+      setShowAlert(false);
+    }, 5000);
   };
+
+  // Правило хорошего тона: если компонент вдруг размонтируется, очищаем таймер
+  useEffect(() => {
+    return () => {
+      if (timerRef.current) clearTimeout(timerRef.current);
+    };
+  }, []);
 
   return (
     <div className="flex flex-col">
@@ -55,7 +74,6 @@ const ProductActions = ({ product }: ProductActionsProps) => {
         <h3 className="font-bold mb-2">Доступные размеры:</h3>
         <div className="flex gap-2">
           {product.sizes?.map((size) => {
-            // Переводим size в строку для надежного сравнения
             const sizeStr = String(size);
             const isSelected = selectedSize === sizeStr;
 
@@ -84,6 +102,12 @@ const ProductActions = ({ product }: ProductActionsProps) => {
         Добавить в корзину
       </button>
 
+      {/* --- 3. Передаем наш стейт showAlert в пропс isVisible --- */}
+      <AlertComponent 
+        title="Успешно!" 
+        description={`Товар ${product.name} (размер ${selectedSize}) добавлен в корзину`} 
+        isVisible={showAlert} 
+      />
     </div>
   );
 };
