@@ -10,8 +10,7 @@ const Profile = () => {
 const router = useRouter();
     const [userData, setUserData] = useState<any>(null);
     const [loading, setLoading] = useState(true);
-    // favorites in Firestore are stored as an object (DocumentData),
-    // so keep favorite as any (not an array) to match getDoc(...).data()
+   
     const [favorite, setFavorite] = useState<any[]>([]);
     const [paidOrders, setPaidOrders] = useState<any[]>([]);
     const [loadingOrders, setLoadingOrders] = useState(false);
@@ -21,7 +20,7 @@ const router = useRouter();
     if (currentUser) {
       const uid = currentUser.uid;
       
-      // 1. Получаем данные пользователя
+     
       try {
         const favSnap = await getDoc(doc(db, 'favorites', uid));
         if (favSnap.exists()){
@@ -39,13 +38,13 @@ const router = useRouter();
         setLoading(false);
       }
 
-      // 2. Сразу после этого получаем оплаченные заказы
+     
       try {
         setLoadingOrders(true);
         const ordersRef = collection(db, 'orders');
         const q = query(
           ordersRef,
-          where('userId', '==', uid), // Используем uid из onAuthStateChanged
+          where('userId', '==', uid), 
           where('status', '==', 'paid')  
         );
         
