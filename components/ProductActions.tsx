@@ -94,7 +94,7 @@ const ProductActions = ({ product }: ProductActionsProps) => {
         </div>
       </div>
 
-      {/* --- 2. Кнопка Добавить в корзину --- */}
+     
       <button
         onClick={handleAdd}
         className="mt-4 bg-black text-white py-4 rounded-xl font-bold hover:bg-gray-800 transition-colors w-full"
