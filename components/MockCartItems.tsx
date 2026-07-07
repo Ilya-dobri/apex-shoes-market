@@ -120,7 +120,7 @@ export default function MockCartItems() {
               >
                 {/* Изображение товара */}
                 <div className="w-full sm:w-32 h-32 bg-gray-100 rounded-[16px] overflow-hidden flex-shrink-0">
-                  <img 
+                  <img  
                     src={item.imageUrl} 
                     alt={item.name} 
                     className="w-full h-full object-cover"
