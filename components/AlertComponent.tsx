@@ -16,7 +16,7 @@ const AlertComponent = ({ title, description, isVisible }: AlertComponentProps) 
     // чтобы запустить анимацию exit.
     <AnimatePresence>
       {isVisible && (
-        // Заменяем обычный div на motion.div.
+       
         // Теперь мы можем передавать ему пропсы анимации.
         <motion.div
           // 1. Начальное состояние (за кадром, прозрачное)
