@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useEffect } from 'react';
-import useCartStore from '@/store/useCartStore';
+import useCartStore from '@/components/store/useCartStore';
 import Link from 'next/link'
 import { addDoc, collection, doc, getDoc, setDoc } from 'firebase/firestore';
 import { db, auth } from '@/dataBase/firebaseConfig';

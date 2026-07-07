@@ -2,7 +2,7 @@
 
 // 1. Импортируем хуки React
 import { useState, useEffect } from "react";
-import useSportsStore from "@/store/useSportsStore";
+import useSportsStore from "@/components/store/useSportsStore";
 
 import SearchAndButton from "@/components/SearchAndButton";
 import Shoes from "@/components/Shoes";
@@ -68,7 +68,7 @@ export default function Home() {
       <InfoBadge />
       <SearchAndButton />
       
-      <div className=" mx-auto md:w-full md:px-4 md:px-8 md:max-w-[1600px] md:min-[2000px]:max-w-[2200px] min-[2300px]:max-w-[82%]">
+      <div className=" mx-auto md:w-full  px-8 md:max-w-[1600px] md:min-[2000px]:max-w-[2200px] min-[2300px] max-w-[82%]">
         
         {/* 4. Показываем загрузку, пока ждем ответ от Firebase */}
         {isLoading ? (
@@ -76,7 +76,7 @@ export default function Home() {
             Загрузка каталога...
           </div>
         ) : (
-          <Carousel>
+          <Carousel >
             <CarouselContent className="-ml-4">
               {/* 5. Заменяем старый JSON (shoe) на наш стейт с базой данных (shoes) */}
               {shoes
@@ -94,6 +94,7 @@ export default function Home() {
             <CarouselPrevious className="left-0 md:left-[-20px] 2xl:left-[-40px]" />
             <CarouselNext className="right-0 md:right-[-20px] 2xl:right-[-40px]" />
           </Carousel>
+          
         )}
         
       </div>

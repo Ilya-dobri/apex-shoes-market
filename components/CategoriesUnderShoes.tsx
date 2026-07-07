@@ -28,7 +28,7 @@ const CategoriesUnderShoes = ({ title, description, imageUrl }: Categories) => {
         <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4 tracking-wide uppercase">
           {title}
         </h2>
-        <p className="text-base sm:text-lg text-gray-500 mb-10 max-w-xs leading-relaxed">
+        <p className="text-base sm:text-lg text-gray-500 md:mb-10 max-w-xs leading-relaxed">
           {description}
         </p>
 

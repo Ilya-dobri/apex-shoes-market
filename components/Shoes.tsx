@@ -1,6 +1,12 @@
+'use client'
+
 import Link from 'next/link';
-import React from 'react'
+import React, { useState } from 'react'
 import { motion } from 'framer-motion'
+import useFavoriteStore from './store/useFavoriteStore';
+import { saveFavoritesToDB } from './FireStore/addComponentToDB';
+import { getAuth } from 'firebase/auth';
+
 interface ShoesProps {
   id: string | number;
   imageUrl: string;
@@ -11,6 +17,33 @@ interface ShoesProps {
 }
 
 const Shoes = ({id, imageUrl, name, price, rating, sizes}: ShoesProps) => {
+   
+  const toggleFavorite = useFavoriteStore((state) => state.toggleFavorite)
+  const favorites = useFavoriteStore((state) => state.favorites);
+  const isFavorite = favorites.some((fav) => fav.id === String(id));
+ const handleHeartClick = () => {
+    const auth = getAuth();
+    const userId = auth.currentUser?.uid;
+    if (!userId) {
+      alert("Войдите в аккаунт, чтобы добавлять товары в избранное!");
+      return;
+    }
+    const productData = {
+      id: String(id),
+      name,
+      imageUrl,
+      price,
+      
+      size: sizes && sizes.length > 0 ? String(sizes[0]) : "", 
+    };
+
+    toggleFavorite(productData);
+    const updatedFavorites = useFavoriteStore.getState().favorites;
+    saveFavoritesToDB(userId, updatedFavorites);
+  };
+
+
+  
   return (
     <motion.div 
     initial={{ opacity: 0, y: 40 }}
@@ -21,7 +54,12 @@ const Shoes = ({id, imageUrl, name, price, rating, sizes}: ShoesProps) => {
   className="relative flex flex-col p-4 bg-[#ffecec42] rounded-[24px] w-[260px] hover:shadow-lg transition-shadow duration-300"
 >
   {/* Иконка сердечка */}
-  <button className="absolute top-4 right-4 text-gray-400 hover:text-red-500 transition-colors z-10">
+ <button   
+        onClick={handleHeartClick}    
+        className={`absolute top-4 right-4 z-10 transition-colors ${
+          isFavorite ? 'text-red-500' : 'text-gray-400 hover:text-red-500'
+        }`}
+      >   
     <svg width="24" height="24" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24">
       <path strokeLinecap="round" strokeLinejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />
     </svg>

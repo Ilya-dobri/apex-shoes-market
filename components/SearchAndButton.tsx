@@ -3,7 +3,7 @@
 
 import { useEffect, useState } from 'react';
 import BattonWithClick from './Batton';
-import useSportsStore from '@/store/useSportsStore';
+import useSportsStore from '@/components/store/useSportsStore';
 
  
 

@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import useCartStore from "@/store/useCartStore";
+import useCartStore from "@/components/store/useCartStore";
 
 const SizesLogic = ({ product }: { product: any }) => {
   const [selectedSize, setSelectedSize] = useState<string | null>(null);

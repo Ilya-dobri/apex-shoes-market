@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import useCartStore from "@/store/useCartStore";
+import useCartStore from "@/components/store/useCartStore";
 
 // Описываем интерфейс пропсов. В 'sizes' приходит массив всех размеров из базы,
 // а остальные данные нужны для кнопки добавления.

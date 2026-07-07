@@ -1,6 +1,6 @@
 "use client"; // Это включает работу хуков и onClick!
 
-import useCartStore from '@/store/useCartStore';
+import useCartStore from '@/components/store/useCartStore';
 
 // Описываем, какие данные нужны кнопке (можно вынести тип продукта в отдельный файл)
 export interface AddToCartButtonProps {

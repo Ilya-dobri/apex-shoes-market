@@ -1,4 +1,4 @@
-import { collection, addDoc, getDocs, getDoc, doc } from "firebase/firestore";
+import { collection, addDoc, getDocs, getDoc, doc, setDoc } from "firebase/firestore";
 import { db, auth } from "../../dataBase/firebaseConfig";
 import { onAuthStateChanged } from "firebase/auth";
 
@@ -52,3 +52,19 @@ export const getMasiveCategoriesFromDB = async () => {
     return []; 
 }
 }
+
+
+export const saveFavoritesToDB = async (userId: string, currentFavorites: any[]) => {
+  try {
+    const docRef = doc(db, 'favorites', userId);
+
+    // setDoc положит в базу актуальный массив. 
+    // Если документа не было — он его создаст.
+    await setDoc(docRef, {
+      items: currentFavorites
+    });
+    
+  } catch (error) {
+    console.error("Ошибка при сохранении в БД:", error);
+  }
+};

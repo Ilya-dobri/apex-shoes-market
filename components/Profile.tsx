@@ -10,6 +10,9 @@ const Profile = () => {
 const router = useRouter();
     const [userData, setUserData] = useState<any>(null);
     const [loading, setLoading] = useState(true);
+    // favorites in Firestore are stored as an object (DocumentData),
+    // so keep favorite as any (not an array) to match getDoc(...).data()
+    const [favorite, setFavorite] = useState<any[]>([]);
     const [paidOrders, setPaidOrders] = useState<any[]>([]);
     const [loadingOrders, setLoadingOrders] = useState(false);
 
@@ -20,6 +23,10 @@ const router = useRouter();
       
       // 1. Получаем данные пользователя
       try {
+        const favSnap = await getDoc(doc(db, 'favorites', uid));
+        if (favSnap.exists()){
+         setFavorite(favSnap.data().items || []);
+        }
         const docSnap = await getDoc(doc(db, "users", uid));
         if (docSnap.exists()) {
           setUserData(docSnap.data());
@@ -202,7 +209,15 @@ const handleLogout = async () => {
 </div>
 
        
-       
+       <div>
+        <h1>избраные</h1>
+        {favorite.map((f) => (
+          <div key={f}>
+              <h1>{f.name}</h1>
+          </div>
+        ))}
+
+       </div>
     </div>  
    
   );

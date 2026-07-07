@@ -5,7 +5,7 @@ import { Button } from './ui/button'
 import Image from 'next/image'
 import logo from "../app/img/logo.png"
 import Link from 'next/link'
-import useCartStore from '@/store/useCartStore'
+import useCartStore from '@/components/store/useCartStore'
 import { onAuthStateChanged } from "firebase/auth";
 import { auth, db } from '@/dataBase/firebaseConfig';
 import { doc, getDoc } from "firebase/firestore";
