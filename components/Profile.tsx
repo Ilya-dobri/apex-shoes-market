@@ -3,23 +3,31 @@ import { onAuthStateChanged, signOut } from 'firebase/auth';
 import { useRouter } from 'next/navigation';
 import React, { useEffect, useState } from 'react'
 import { auth, db } from '@/dataBase/firebaseConfig';
-import { collection, doc, getDoc, getDocs, query, where } from 'firebase/firestore';
+import { collection, doc, getDoc, getDocs, query, updateDoc, where } from 'firebase/firestore';
 import AddProductForm from './FireStore/addProductForm';
+import DisplayCard from './CartUiComponent';
+import CartUiComponent from './CartUiComponent';
+import FavoriteItem from './FavoriteItem';
+import useFavoriteStore from './store/useFavoriteStore';
+import { get } from 'http';
+
+
+
 
 const Profile = () => {
 const router = useRouter();
     const [userData, setUserData] = useState<any>(null);
     const [loading, setLoading] = useState(true);
-   
+    const removeFavorite = useFavoriteStore((state) => state.removeFavorite)
     const [favorite, setFavorite] = useState<any[]>([]);
     const [paidOrders, setPaidOrders] = useState<any[]>([]);
     const [loadingOrders, setLoadingOrders] = useState(false);
-
+    
    useEffect(() => {
   const unsubscribe = onAuthStateChanged(auth, async (currentUser) => {
     if (currentUser) {
       const uid = currentUser.uid;
-      
+     
      
       try {
         const favSnap = await getDoc(doc(db, 'favorites', uid));
@@ -37,8 +45,7 @@ const router = useRouter();
       } finally {
         setLoading(false);
       }
-
-     
+      
       try {
         setLoadingOrders(true);
         const ordersRef = collection(db, 'orders');
@@ -76,7 +83,30 @@ const handleLogout = async () => {
     }
   };
 
+const handleRemoveFavorite = async (itemToRemove: any) => {
+        // 1. Оптимистичное обновление UI (сразу убираем с экрана)
+        const updatedFavorites = favorite.filter(
+            (f) => !(f.id === itemToRemove.id && f.size === itemToRemove.size)
+        );
+        setFavorite(updatedFavorites);
 
+        // 2. Обновляем Zustand, чтобы иконки обновились в других компонентах
+        removeFavorite(itemToRemove);
+
+        // 3. Обновляем Firebase
+        const user = auth.currentUser;
+        if (user) {
+            try {
+                const favRef = doc(db, 'favorites', user.uid);
+                await updateDoc(favRef, {
+                    items: updatedFavorites
+                });
+            } catch (error) {
+                console.error("Ошибка при удалении из Firebase:", error);
+                // Если произошла ошибка, по-хорошему тут надо вернуть товар обратно в setFavorite
+            }
+        }
+    };
  return (
     <div className="min-h-screen w-full bg-[#f5f6f8] p-5 text-[#333] font-sans">
       <div className="max-w-[600px] mx-auto bg-white rounded-[30px] p-[40px] shadow-[0_15px_35px_rgba(0,0,0,0.04)] mt-10">
@@ -156,70 +186,23 @@ const handleLogout = async () => {
     // Список заказов
     <div className="flex flex-col gap-5">
       {paidOrders.map((order) => (
-        <div
-          key={order.id}
-          className="bg-white rounded-[24px] p-6 shadow-[0_5px_15px_rgba(0,0,0,0.03)] border border-[#f0f2f5] transition-transform duration-300 hover:-translate-y-1 w-full"
-        >
-          {/* Шапка карточки: Дата и Статус */}
-          <div className="flex justify-between items-center border-b border-[#f0f2f5] pb-4 mb-4">
-            <div>
-              <p className="text-[13px] text-[#888] mb-1 font-medium uppercase tracking-wider">
-                {order.updatedAt?.seconds
-                  ? new Date(order.updatedAt.seconds * 1000).toLocaleDateString('ru-RU', { day: 'numeric', month: 'long', year: 'numeric' })
-                  : 'Дата неизвестна'}
-              </p>
-              <p className="font-semibold text-[18px] text-[#222]">
-                Заказ № {order.id.slice(0, 8).toUpperCase()}
-              </p>
-            </div>
-            <span className="bg-green-50 text-green-600 px-4 py-2 rounded-xl text-[13px] font-bold tracking-wide">
-              ОПЛАЧЕН
-            </span>
-          </div>
-
-          {/* Тело карточки: Информация о товарах */}
-          <div className="mb-5 px-1">
-            <p className="text-[15px] text-[#555]">
-              {order.products ? `Количество товаров: ${order.products.length}` : 'Кроссовки (детали в базе)'}
-            </p>
-           {order.products && order.products[0]?.imageUrl && (
-  <div className="mt-4">
-    <img
-      src={order.products[0].imageUrl}
-      alt="Фото товара"
-      className="w-24 h-24 object-cover rounded-2xl border border-gray-200 shadow-sm"
-    />
-  </div>
-)}
-          </div>
-          
-
-          {/* Подвал карточки: Итог */}
-          <div className="flex justify-between items-center bg-[#f9fafb] p-4 rounded-xl border border-[#f0f2f5]">
-            <span className="text-[15px] text-[#888] font-medium">Сумма заказа:</span>
-            <span className="font-bold text-[20px] text-[#222]">
-              {order.totalAmount ? `${order.totalAmount.toLocaleString('ru-RU')} ₽` : '---'}
-            </span>
-          </div>
-        </div>
+       <CartUiComponent  key={order.id} order={order} />
       ))}
     </div>
   )}
 </div>
 
-       
-       <div>
-        <h1>избраные</h1>
+       <h1>избраные</h1>
+       <div className='flex'>
+        
         {favorite.map((f) => (
-          <div key={f.id}>
-              <h1>{f.name}</h1>
-              
-          </div>
+          <FavoriteItem onRemove={() => handleRemoveFavorite(f)} key={f.id + f.size} product={f} />
         ))}
+
 
        </div>
     </div>  
-   
+
   );
 };
 

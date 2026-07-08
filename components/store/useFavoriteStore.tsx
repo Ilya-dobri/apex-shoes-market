@@ -7,6 +7,7 @@ type FavoriteState = {
 	// addFavorite: (newFavorite: Omit<CartItem, 'quantity'>) => void;
 	// removeFavorite: (id: string, size: string, ) => void;
     toggleFavorite: (item: Omit<CartItem, 'quantity'>) => void;
+    removeFavorite: (item: Omit<CartItem, 'quantity'>) => void;
 };
 
 const useFavoriteStore = create<FavoriteState>((set) => ({
@@ -30,8 +31,16 @@ const useFavoriteStore = create<FavoriteState>((set) => ({
             favorites: [...state.favorites, { ...item, quantity: 1 }]
         };
     }
-})
+}),
+removeFavorite: (item) => set((state) => ({
+    favorites: state.favorites.filter(
+        (fav) => !(fav.id === item.id && fav.size === item.size)
+    ),
+    
+}))
+
 }));    
+
 
 export default useFavoriteStore;
 

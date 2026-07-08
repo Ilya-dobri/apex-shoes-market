@@ -56,14 +56,14 @@ const useCartStore = create<CartState>()(
             ? { ...item, quantity: item.quantity - 1 }
             : item
         ),
-        amount: state.amount - 1, // Тут всё ок
+        amount: state.amount - 1, 
       };
     }
  
-    // quantity === 1 — удаляем товар полностью
+
     return {
       items: state.items.filter((item) => !(item.id === id && item.size === size && item.imageUrl === imageUrl)),
-      amount: state.amount - target.quantity, // <- Вычитаем реальное количество (хоть оно и 1), но для надежности лучше target.quantity
+      amount: state.amount - target.quantity, 
     };
   }),
       updateQuantity: (id, size, quantity) =>
@@ -75,7 +75,7 @@ const useCartStore = create<CartState>()(
       clearCart: () => set({ items: [] }),
     }),
     {
-      name: "sports-storage", // Уникальное имя ключа, под которым данные будут лежать в localStorage
+      name: "sports-storage", 
     }
   )
 );
