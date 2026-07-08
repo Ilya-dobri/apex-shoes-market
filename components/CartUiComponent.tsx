@@ -1,10 +1,12 @@
+import Link from "next/link";
+
 type CartUiComponentType = {
   order: {
     id: string;
 
     updatedAt?: { seconds: number };
 
-    products?: Array<{ imageUrl: string }>;
+    products?: Array<{ id: string; imageUrl: string }>;
 
     totalAmount?: number;
   };
@@ -13,8 +15,6 @@ type CartUiComponentType = {
 const CartUiComponent = ({ order }: CartUiComponentType) => {
   return (
     <div className="bg-white rounded-[24px] p-6 shadow-[0_5px_15px_rgba(0,0,0,0.03)] border border-[#f0f2f5] transition-transform duration-300 hover:-translate-y-1 w-full">
-      {/* Шапка карточки: Дата и Статус */}
-
       <div className="flex justify-between items-center border-b border-[#f0f2f5] pb-4 mb-4">
         <div>
           <p className="text-[13px] text-[#888] mb-1 font-medium uppercase tracking-wider">
@@ -36,8 +36,6 @@ const CartUiComponent = ({ order }: CartUiComponentType) => {
         </span>
       </div>
 
-      {/* Тело карточки: Информация о товарах */}
-
       <div className="mb-5 px-1">
         <p className="text-[15px] text-[#555]">
           {order.products
@@ -47,16 +45,17 @@ const CartUiComponent = ({ order }: CartUiComponentType) => {
 
         {order.products && order.products[0]?.imageUrl && (
           <div className="mt-4">
-            <img
-              src={order.products[0].imageUrl}
-              alt="Фото товара"
-              className="w-24 h-24 object-cover rounded-2xl border border-gray-200 shadow-sm"
-            />
+            <Link href={`/products/${order.products[0].id}`}>
+              {" "}
+              <img
+                src={order.products[0].imageUrl}
+                alt="Фото товара"
+                className="w-24 h-24 object-cover rounded-2xl border border-gray-200 shadow-sm"
+              />
+            </Link>
           </div>
         )}
       </div>
-
-      {/* Подвал карточки: Итог */}
 
       <div className="flex justify-between items-center bg-[#f9fafb] p-4 rounded-xl border border-[#f0f2f5]">
         <span className="text-[15px] text-[#888] font-medium">
@@ -69,7 +68,6 @@ const CartUiComponent = ({ order }: CartUiComponentType) => {
             : "---"}
         </span>
       </div>
-      
     </div>
   );
 };

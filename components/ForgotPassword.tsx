@@ -24,9 +24,9 @@ const ForgotPassword = () => {
       setMessage('Ссылка для восстановления отправлена на почту!');
       setEmail(''); // Очищаем поле ввода после успеха
     } catch (err: any) {
-      console.error('❌ Ошибка сброса пароля:', err);
+     
       
-      // Обработка частых ошибок
+      
       if (err.code === 'auth/user-not-found' || err.code === 'auth/invalid-email') {
         setError('Пользователь с такой почтой не найден.');
       } else if (err.code === 'auth/too-many-requests') {

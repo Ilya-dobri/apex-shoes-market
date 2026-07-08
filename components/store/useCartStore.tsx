@@ -7,6 +7,7 @@ export interface CartItem {
   quantity: number;
   size: string;
   imageUrl: string;
+  
 }
 
 interface CartState {
@@ -25,6 +26,9 @@ const useCartStore = create<CartState>()(
     (set) => ({
       items: [],
       amount: 0,
+
+
+
       addItem: (newItem) =>
         set((state) => {
           const existingItem = state.items.find((item) => item.id === newItem.id && item.size === newItem.size && item.imageUrl === newItem.imageUrl);

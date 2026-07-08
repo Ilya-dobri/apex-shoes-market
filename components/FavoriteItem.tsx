@@ -1,20 +1,23 @@
 import React from 'react';
 import { Heart, ShoppingCart, Trash2 } from 'lucide-react'; // Рекомендую использовать lucide-react
-
+import Link from 'next/link';
 type FavoriteProductType = {
   product: {
     id: string;
-    title: string;
+    title?: string;
     price: number;
     imageUrl: string;
     category?: string;
+    
   };
+  size: string
   onRemove: () => void;
 };
 
-const FavoriteItem = ({ product, onRemove }: FavoriteProductType) => {
+
+const FavoriteItem = ({ product, size, onRemove }: FavoriteProductType) => {
   return (
-    <div className=" group relative bg-white rounded-[24px] p-4 border border-[#f0f2f5] shadow-sm hover:shadow-lg transition-all duration-300 w-70 flex flex-col">
+    <div className=" group relative bg-white rounded-[24px] p-4 border border-[#f0f2f5] shadow-sm hover:shadow-lg transition-all duration-300 w-65 flex flex-col">
       {/* Кнопка удаления */}
       <button
         onClick={onRemove}
@@ -25,11 +28,13 @@ const FavoriteItem = ({ product, onRemove }: FavoriteProductType) => {
 
       {/* Изображение */}
       <div className="relative aspect-square w-full overflow-hidden rounded-2xl bg-[#f9fafb] mb-4">
+        <Link href={`/products/${product.id}`}>
         <img
           src={product.imageUrl}
           alt={product.title}
           className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
         />
+        </Link>
       </div>
 
       {/* Информация */}
@@ -45,13 +50,13 @@ const FavoriteItem = ({ product, onRemove }: FavoriteProductType) => {
         <p className="font-bold text-[18px] text-[#222]">
           {product.price.toLocaleString("ru-RU")} ₽
         </p>
+        <p>
+          {size}
+        </p>
       </div>
 
       {/* Кнопка добавления в корзину */}
-      <button className="mt-4 w-full flex items-center justify-center gap-2 bg-[#222] text-white py-3 rounded-xl font-semibold hover:bg-black transition-colors">
-        <ShoppingCart size={18} />
-        В корзину
-      </button>
+      
     </div>
   );
 };

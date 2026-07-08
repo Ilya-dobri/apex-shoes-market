@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useRef, useEffect } from "react";
+import  { useState, useRef, useEffect } from "react";
 import useCartStore from "@/components/store/useCartStore";
 import AlertComponent from "./AlertComponent";
 
@@ -35,6 +35,7 @@ const ProductActions = ({ product }: ProductActionsProps) => {
 
     addItem({ 
       id: String(product.id), 
+      
       name: product.name, 
       price: product.price, 
       size: String(selectedSize),
@@ -43,7 +44,7 @@ const ProductActions = ({ product }: ProductActionsProps) => {
 
     console.log("Текущая корзина:", useCartStore.getState().items);
     
-    // --- МАГИЯ ТАЙМЕРА ТУТ ---
+    
     
     // Сначала принудительно показываем алерт
     setShowAlert(true);

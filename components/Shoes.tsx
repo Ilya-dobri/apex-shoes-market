@@ -14,6 +14,7 @@ interface ShoesProps {
   price: number;
   rating: number;
   sizes: number[];
+  title: string
 }
 
 const Shoes = ({id, imageUrl, name, price, rating, sizes}: ShoesProps) => {
@@ -30,11 +31,10 @@ const Shoes = ({id, imageUrl, name, price, rating, sizes}: ShoesProps) => {
     }
     const productData = {
       id: String(id),
-      name,
+      name: name,
       imageUrl,
       price,
-      
-      size: sizes && sizes.length > 0 ? String(sizes[0]) : "", 
+      size: sizes && sizes.length > 0 ? String(sizes[0]) : "",
     };
 
     toggleFavorite(productData);

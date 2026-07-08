@@ -1,6 +1,6 @@
 import { collection, addDoc, getDocs, getDoc, doc, setDoc } from "firebase/firestore";
-import { db, auth } from "../../dataBase/firebaseConfig";
-import { onAuthStateChanged } from "firebase/auth";
+import { db } from "../../dataBase/firebaseConfig";
+
 
 // Функция для добавления (её мы уже использовали)
 export const addShoeToDB = async (shoeData: any) => { 

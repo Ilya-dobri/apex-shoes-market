@@ -3,10 +3,9 @@
 import React, { useEffect } from 'react';
 import useCartStore from '@/components/store/useCartStore';
 import Link from 'next/link'
-import { addDoc, collection, doc, getDoc, setDoc } from 'firebase/firestore';
+import { addDoc, collection, doc, getDoc} from 'firebase/firestore';
 import { db, auth } from '@/dataBase/firebaseConfig';
-import { onAuthStateChanged } from 'firebase/auth';
-// Расширенный интерфейс продукта для корзины
+
 export interface CartProduct {
   id: string;
   name: string;
@@ -16,7 +15,7 @@ export interface CartProduct {
   imageUrl: string;
 }
 
-// Моковые данные для демонстрации верстки
+
 
 
 export default function MockCartItems() {
@@ -26,7 +25,7 @@ export default function MockCartItems() {
   const updateQuantity = useCartStore((state) => state.updateQuantity);
   const totalPrice = items.reduce((total, item) => total + item.price * item.quantity, 0);
   const [isProcessing, setIsProcessing] = React.useState(false);
-  const [cartItems, setCartItems] = React.useState<CartProduct[]>([]);
+
 
 
 
@@ -46,12 +45,12 @@ export default function MockCartItems() {
       const currentUserId = docSnap.data()?.userId || uid;
 
     const orderRef = await addDoc(collection(db, "orders"), {
-      userId: currentUserId,     // ID твоего пользователя из БД или Auth
-      userUid: uid,              // Firebase Auth UID для надежности связки
-      products: items,           // Твой массив items прямо из Zustand стора
-      totalAmount: totalPrice,   // Итоговая сумма заказа
-      status: 'pending',         // Статус «Ожидает оплаты»
-      createdAt: new Date(),     // Дата и время создания заказа
+      userId: currentUserId,    
+      userUid: uid,             
+      products: items,           
+      totalAmount: totalPrice, 
+      status: 'pending',        
+      createdAt: new Date(),    
     });
       
 
@@ -144,7 +143,7 @@ export default function MockCartItems() {
                   </div>
 
                   <div className="flex justify-between items-center mt-auto">
-                    {/* Контролы количества (Pill-shaped) */}
+                  
                     <div className="flex items-center bg-[#F1F2F2] rounded-full px-1 py-1">
                       <button onClick={() => { if (item.quantity > 1) { updateQuantity(item.id, item.size, item.quantity - 1); } else { removeItem(item.id, item.size, item.imageUrl); } }} className="w-8 h-8 flex items-center justify-center rounded-full hover:bg-white hover:shadow-sm transition-all text-gray-600">
                         -
