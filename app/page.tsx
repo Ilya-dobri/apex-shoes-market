@@ -23,7 +23,7 @@ import { getMasiveCategoriesFromDB, getShoesFromDB } from "@/components/FireStor
 
 
 
-// Проверь путь! В прошлый раз мы писали эту функцию в dataBase/shoesService.ts
+
 
 
 export default function Home() {

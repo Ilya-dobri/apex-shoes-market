@@ -1,0 +1,200 @@
+{
+  "brands": {
+    "id": "brands",
+    "label": "Бренды",
+    "columns": [
+      {
+        "id": "brands-sport",
+        "title": "Спортивные бренды",
+        "items": [
+          { "id": "nike-ACG", "label": "Nike", "href": "/brands/nike" },
+          { "id": "adidas", "label": "Adidas", "href": "/brands/adidas" },
+          { "id": "puma", "label": "Puma", "href": "/brands/puma" },
+          { "id": "new-balance", "label": "New Balance", "href": "/brands/new-balance" },
+          { "id": "reebok", "label": "Reebok", "href": "/brands/reebok" },
+          { "id": "under-armour", "label": "Under Armour", "href": "/brands/under-armour" }
+        ]
+      },
+      {
+        "id": "brands-sub",
+        "title": "Суббренды",
+        "items": [
+          { "id": "jordan", "label": "Jordan", "href": "/brands/jordan" },
+          { "id": "nike-ACG", "label": "Nike ACG", "href": "/brands/nike" },
+          { "id": "adidas-originals", "label": "Adidas Originals", "href": "/brands/adidas-originals" },
+          { "id": "yeezy", "label": "Yeezy", "href": "/brands/yeezy" },
+          { "id": "kobe", "label": "Kobe", "href": "/brands/kobe" }
+        ]
+      },
+      {
+        "id": "brands-lifestyle",
+        "title": "Стиль жизни",
+        "items": [
+          { "id": "nocta", "label": "NOCTA", "href": "/brands/nocta" },
+          { "id": "converse", "label": "Converse", "href": "/brands/converse" },
+          { "id": "vans", "label": "Vans", "href": "/brands/vans" },
+          { "id": "fila", "label": "Fila", "href": "/brands/fila" }
+        ]
+      }
+    ]
+  },
+
+  "new": {
+    "id": "new",
+    "label": "Новинки",
+    "columns": [
+      {
+        "id": "new-main",
+        "title": "Главное",
+        "items": [
+          { "id": "new-all", "label": "Все новинки", "href": "/new" },
+          { "id": "new-bestsellers", "label": "Хиты продаж", "href": "/new/bestsellers" },
+          { "id": "new-coming-soon", "label": "Скоро в продаже", "href": "/new/coming-soon" },
+          { "id": "new-summer", "label": "Летняя коллекция", "href": "/new/summer" }
+        ]
+      },
+      {
+        "id": "new-shoes",
+        "title": "Обувь",
+        "items": [
+          { "id": "new-shoes-all", "label": "Все кроссовки", "href": "/new/shoes" },
+          { "id": "new-shoes-running", "label": "Беговые", "href": "/new/shoes/running" },
+          { "id": "new-shoes-basketball", "label": "Баскетбольные", "href": "/new/shoes/basketball" },
+          { "id": "new-shoes-lifestyle", "label": "Повседневные", "href": "/new/shoes/lifestyle" }
+        ]
+      },
+      {
+        "id": "new-clothing",
+        "title": "Одежда",
+        "items": [
+          { "id": "new-clothing-all", "label": "Вся одежда", "href": "/new/clothing" },
+          { "id": "new-clothing-hoodies", "label": "Худи и свитшоты", "href": "/new/clothing/hoodies" },
+          { "id": "new-clothing-tshirts", "label": "Футболки", "href": "/new/clothing/t-shirts" },
+          { "id": "new-clothing-jackets", "label": "Куртки", "href": "/new/clothing/jackets" }
+        ]
+      }
+    ]
+  },
+
+  "sale": {
+    "id": "sale",
+    "label": "Акции",
+    "columns": [
+      {
+        "id": "sale-discounts",
+        "title": "Скидки",
+        "items": [
+          { "id": "sale-all", "label": "Все акции", "href": "/sale" },
+          { "id": "sale-30", "label": "До -30%", "href": "/sale/30" },
+          { "id": "sale-50", "label": "До -50%", "href": "/sale/50" },
+          { "id": "sale-70", "label": "До -70%", "href": "/sale/70" }
+        ]
+      },
+      {
+        "id": "sale-categories",
+        "title": "Категории со скидкой",
+        "items": [
+          { "id": "sale-shoes", "label": "Обувь", "href": "/sale/shoes" },
+          { "id": "sale-clothing", "label": "Одежда", "href": "/sale/clothing" },
+          { "id": "sale-accessories", "label": "Аксессуары", "href": "/sale/accessories" }
+        ]
+      },
+      {
+        "id": "sale-special",
+        "title": "Специальные предложения",
+        "items": [
+          { "id": "sale-deal-of-the-day", "label": "Товар дня", "href": "/sale/deal-of-the-day" },
+          { "id": "sale-outlet", "label": "Аутлет", "href": "/sale/outlet" },
+          { "id": "sale-bundles", "label": "Комплекты со скидкой", "href": "/sale/bundles" }
+        ]
+      }
+    ]
+  },
+
+  "technology": {
+    "id": "technology",
+    "label": "Технологии",
+    "columns": [
+      {
+        "id": "tech-cushioning",
+        "title": "Амортизация",
+        "items": [
+          { "id": "tech-nike-air", "label": "Nike Air", "href": "/technology/nike-air" },
+          { "id": "tech-zoomx", "label": "Nike ZoomX", "href": "/technology/zoomx" },
+          { "id": "tech-boost", "label": "Adidas Boost", "href": "/technology/boost" },
+          { "id": "tech-fresh-foam", "label": "New Balance Fresh Foam", "href": "/technology/fresh-foam" }
+        ]
+      },
+      {
+        "id": "tech-materials",
+        "title": "Материалы",
+        "items": [
+          { "id": "tech-flyknit", "label": "Flyknit", "href": "/technology/flyknit" },
+          { "id": "tech-primeknit", "label": "Primeknit", "href": "/technology/primeknit" },
+          { "id": "tech-gore-tex", "label": "Gore-Tex", "href": "/technology/gore-tex" },
+          { "id": "tech-dri-fit", "label": "Dri-FIT", "href": "/technology/dri-fit" }
+        ]
+      },
+      {
+        "id": "tech-innovation",
+        "title": "Инновации",
+        "items": [
+          { "id": "tech-sustainability", "label": "Устойчивые материалы", "href": "/technology/sustainability" },
+          { "id": "tech-smart-shoes", "label": "Умная обувь", "href": "/technology/smart-shoes" }
+        ]
+      }
+    ]
+  },
+
+  "about": {
+    "id": "about",
+    "label": "О нас",
+    "columns": [
+      {
+        "id": "about-company",
+        "title": "Компания",
+        "items": [
+          { "id": "about-us", "label": "О компании", "href": "/about" },
+          { "id": "about-mission", "label": "Наша миссия", "href": "/about/mission" },
+          { "id": "about-stores", "label": "Магазины", "href": "/about/stores" },
+          { "id": "about-careers", "label": "Вакансии", "href": "/about/careers" }
+        ]
+      },
+      {
+        "id": "about-contacts",
+        "title": "Контакты",
+        "items": [
+          { "id": "about-contact-us", "label": "Связаться с нами", "href": "/about/contacts" },
+          { "id": "about-faq", "label": "Часто задаваемые вопросы", "href": "/about/faq" },
+          { "id": "about-press", "label": "Пресс-центр", "href": "/about/press" }
+        ]
+      }
+    ]
+  },
+
+  "delivery": {
+    "id": "delivery",
+    "label": "Доставка",
+    "columns": [
+      {
+        "id": "delivery-payment",
+        "title": "Доставка и оплата",
+        "items": [
+          { "id": "delivery-terms", "label": "Условия доставки", "href": "/delivery" },
+          { "id": "delivery-payment-methods", "label": "Способы оплаты", "href": "/delivery/payment" },
+          { "id": "delivery-timing", "label": "Сроки доставки", "href": "/delivery/timing" },
+          { "id": "delivery-pickup", "label": "Самовывоз", "href": "/delivery/pickup" }
+        ]
+      },
+      {
+        "id": "delivery-returns",
+        "title": "Возврат",
+        "items": [
+          { "id": "delivery-return-terms", "label": "Условия возврата", "href": "/delivery/returns" },
+          { "id": "delivery-exchange", "label": "Обмен товара", "href": "/delivery/exchange" },
+          { "id": "delivery-warranty", "label": "Гарантия", "href": "/delivery/warranty" }
+        ]
+      }
+    ]
+  }
+}

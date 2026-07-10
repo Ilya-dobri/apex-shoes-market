@@ -9,12 +9,29 @@ import useCartStore from '@/components/store/useCartStore'
 import { onAuthStateChanged } from "firebase/auth";
 import { auth, db } from '@/dataBase/firebaseConfig';
 import { doc, getDoc } from "firebase/firestore";
+import { getMasiveCategoriesFromDB } from "./FireStore/addComponentToDB";
+import { Categories } from "@/types/types";
 
 const Header = () => {
-  const [isScrolled, setIsScrolled] = useState(false);
+  const [isScrolled, setIsScrolled] = useState<boolean>(false);
   const { scrollY } = useScroll();
   const [userData, setUserData] = useState<any>(null);
-  
+  const [isVisible, setIsVisible] = useState<Categories | null>(null)
+
+  const [categori, setCategori] = useState<Categories[]>([])
+
+
+const closeTimer = React.useRef<NodeJS.Timeout | null>(null);
+
+const openMenu = (cat: Categories) => {
+  if (closeTimer.current) clearTimeout(closeTimer.current);
+  setIsVisible(cat);
+};
+
+const scheduleClose = () => {
+  closeTimer.current = setTimeout(() => setIsVisible(null), 150);
+};
+
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, async (currentUser) => {
       if (currentUser) {
@@ -29,6 +46,16 @@ const Header = () => {
     });
     return () => unsubscribe();
   }, []);
+
+
+  useEffect(() =>{
+     const fetchCategories = async () => {
+    const data = await getMasiveCategoriesFromDB(); 
+  
+    setCategori(data || []);
+  };
+  fetchCategories();
+  }, [])
 
   useMotionValueEvent(scrollY, "change", (latest) => {
     if (latest > 20) {
@@ -61,15 +88,39 @@ const Header = () => {
       </div>
 
  
-      <div className="hidden lg:flex justify-center items-center gap-1">
-        <Button className="cursor-pointer text-[18px] xl:text-[20px] tracking-widest font-bold" variant="ghost">Каталог</Button>
-        <Button className="cursor-pointer text-[18px] xl:text-[20px] tracking-widest font-bold" variant="ghost">Бренды</Button>
-        <Button className="cursor-pointer text-[18px] xl:text-[20px] tracking-widest font-bold" variant="ghost">Новинки</Button>
-        <Button className="cursor-pointer text-[18px] xl:text-[20px] tracking-widest font-bold" variant="ghost">Акции</Button>
-        <Button className="cursor-pointer text-[18px] xl:text-[20px] tracking-widest font-bold" variant="ghost">Технологии</Button>
-        <Button className="cursor-pointer text-[18px] xl:text-[20px] tracking-widest font-bold" variant="ghost">О нас</Button>
-        <Button className="cursor-pointer text-[18px] xl:text-[20px] tracking-widest font-bold" variant="ghost">Доставка</Button>
+      <div className="hidden lg:flex justify-center items-center gap-1 relative">
+  {categori?.map((cat: Categories) => (
+    <div
+      key={cat.id}
+onMouseEnter={() => openMenu(cat)}
+  onMouseLeave={scheduleClose}
+    >
+      <Button className="cursor-pointer text-[18px] xl:text-[20px] tracking-widest font-bold" variant="ghost">
+        {cat.label}
+      </Button>
+
+     
+    </div>
+  ))}
+  {isVisible && (
+      <div
+        className="fixed  left-0 top-17 w-screen bg-white shadow-lg grid grid-cols-4 gap-8 p-8 z-50"
+        onMouseEnter={() => openMenu(isVisible)}
+  onMouseLeave={scheduleClose}
+      >
+        {isVisible.columns.map((col) => (
+          <div key={col.id}>
+            <h4 className="font-bold mb-2">{col.title}</h4>
+            {col.items.map((item) => (
+              <Link key={item.id} href={item.href} className="block text-sm text-gray-600 py-1">
+                {item.label}
+              </Link>
+            ))}
+          </div>
+        ))}
       </div>
+    )}
+</div>
 
       {/* КНОПКИ ПРОФИЛЯ И КОРЗИНЫ */}
       <div className="flex gap-2 lg:gap-5 justify-center items-center">
@@ -115,6 +166,7 @@ const Header = () => {
         </Link>
         
       </div>
+     
     </motion.header>
   )
 }

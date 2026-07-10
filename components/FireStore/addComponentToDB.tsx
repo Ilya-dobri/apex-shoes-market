@@ -37,21 +37,25 @@ export const getShoesFromDB = async () => {
 };
 
 
+
+
+
 export const getMasiveCategoriesFromDB = async () => {
   try {
     const querySnapshots = await getDocs(collection(db, `categories`));
+  
 
     const categoriesList: any[] = [];
-
-    querySnapshots.forEach((doc) =>{
+    querySnapshots.forEach((doc) => {
+    
       categoriesList.push({ id: doc.id, ...doc.data() });
-    })
+    });
     return categoriesList;
-  }catch (error) {
+  } catch (error) {
     console.error("Ошибка при получении категорий:", error);
-    return []; 
-}
-}
+    return [];
+  }
+};
 
 
 export const saveFavoritesToDB = async (userId: string, currentFavorites: any[]) => {

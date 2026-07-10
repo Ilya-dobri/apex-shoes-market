@@ -34,6 +34,7 @@ async function clearCollection(collectionName) {
 
 
 
+
 // 3. Читаем твой JSON-файл из папки dataBase
 
 
@@ -66,22 +67,26 @@ async function uploadCategories() {
   const categoriesData = JSON.parse(rawData);
 
   await clearCollection("categories");
- 
-    for (let i = 0; i < categoriesData.length; i++) {
-      const category = categoriesData[i]
-        const { id, ...cleanData } = category;z
-        try {
-            await addDoc(collection(db, "categories"), cleanData);
-            } catch (error) {
+
+  const entries = Object.values(categoriesData); // <-- вот это меняем
+
+  for (let i = 0; i < entries.length; i++) {
+    const category = entries[i];
+    const { id, ...cleanData } = category;
+    try {
+      await addDoc(collection(db, "categories"), cleanData);
+    } catch (error) {
       console.error(`❌ Ошибка загрузки товара ${i + 1}:`, error);
     }
-}
- console.log("🎉 Готово! Все кроссовки успешно залиты в базу!");
-  process.exit(); // Завершаем работу скрипта
   }
+
+  console.log("🎉 Готово! Все кроссовки успешно залиты в базу!");
+  process.exit();
+}
+
   
 
 
 // Запускаем
-//  uploadData();
-uploadCategories();
+uploadData();
+// uploadCategories();

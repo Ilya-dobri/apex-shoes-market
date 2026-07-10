@@ -10,6 +10,7 @@ export type Product = {
   categoryId: number;
 };
 
+
 export  type UseSportsStoreType = {
   users: User[];
   isLoading: boolean;
@@ -20,9 +21,23 @@ export  type UseSportsStoreType = {
   addButtonId: (buttonId: number | null) => void;
 };
 
-export type Categories = {
-  title: string
-  description: string
+export type CategoryItem = {
+  id: string
+  label: string
+  href: string
+}
 
-  imageUrl: string
+export type CategoryColumn = {
+  id: string
+  title: string
+  items: CategoryItem[]
+}
+
+export type Categories = {
+  title: string | undefined
+  id: string
+  label: string
+  description?: string
+  imageUrl?: string
+  columns: CategoryColumn[]
 }
