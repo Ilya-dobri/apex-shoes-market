@@ -80,7 +80,7 @@
     "type": "running",
     "technology": null,
     "price": 140,
-    "imageUrl": "https://sportano.ua/img/b52b588476b8def9e5d485faf958f16f/5/0/5059882883619_41-jpg/krosivki-dlja-bigu-cholovichi-mizuno-revolt-4-white-eventide-india-ink-1770193.jpg",
+    "imageUrl": ["https://sportano.ua/img/b52b588476b8def9e5d485faf958f16f/5/0/5059882883619_41-jpg/krosivki-dlja-bigu-cholovichi-mizuno-revolt-4-white-eventide-india-ink-1770193.jpg","https://yesoriginal.com.ua/media/cache/catalog/products/82/d5/36/90097389-2380462-670x705_-jpg-84.webp", "https://yesoriginal.com.ua/media/cache/catalog/products/04/1a/34/90097389-2380464-670x705_-jpg-84.webp", "https://yesoriginal.com.ua/media/cache/catalog/products/b0/84/bc/90097389-2380461-670x705_-jpg-84.webp", "https://yesoriginal.com.ua/media/cache/catalog/products/72/9b/cd/90097389-2380463-670x705_-jpg-84.webp"],
     "rating": 4.4,
     "sizes": [39, 40, 41, 42]
   },
@@ -94,7 +94,7 @@
     "type": "running",
     "technology": null,
     "price": 140,
-    "imageUrl": "https://sportano.ua/img/b52b588476b8def9e5d485faf958f16f/1/9/195021171867_23-jpg/krosivki-dlja-bigu-cholovichi-saucony-lancer-black-white-1891232.jpg",
+    "imageUrl": ["https://sportano.ua/img/b52b588476b8def9e5d485faf958f16f/1/9/195021171867_23-jpg/krosivki-dlja-bigu-cholovichi-saucony-lancer-black-white-1891232.jpg", "https://yesoriginal.com.ua/media/cache/catalog/products/a8/0d/22/90251585-0-670x705_-jpg-84.webp","https://yesoriginal.com.ua/media/cache/catalog/products/a8/7e/a6/90251585-2-670x705_-jpg-84.webp"],
     "rating": 4.2,
     "sizes": [40, 42, 44, 45]
   },
