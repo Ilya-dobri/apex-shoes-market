@@ -38,6 +38,6 @@ export type Categories = {
   id: string
   label: string
   description?: string
-  imageUrl?: string
+  image?: string
   columns: CategoryColumn[]
 }

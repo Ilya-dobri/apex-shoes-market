@@ -1,4 +1,5 @@
 {
+  
   "brands": {
     "id": "brands",
     "label": "Бренды",
@@ -7,7 +8,7 @@
         "id": "brands-sport",
         "title": "Спортивные бренды",
         "items": [
-          { "id": "nike-ACG", "label": "Nike", "href": "/brands/nike" },
+          { "id": "nike", "label": "Nike", "href": "/brands/nike" },
           { "id": "adidas", "label": "Adidas", "href": "/brands/adidas" },
           { "id": "puma", "label": "Puma", "href": "/brands/puma" },
           { "id": "new-balance", "label": "New Balance", "href": "/brands/new-balance" },
@@ -20,7 +21,7 @@
         "title": "Суббренды",
         "items": [
           { "id": "jordan", "label": "Jordan", "href": "/brands/jordan" },
-          { "id": "nike-ACG", "label": "Nike ACG", "href": "/brands/nike" },
+          { "id": "nike-acg", "label": "Nike ACG", "href": "/brands/nike-acg" },
           { "id": "adidas-originals", "label": "Adidas Originals", "href": "/brands/adidas-originals" },
           { "id": "yeezy", "label": "Yeezy", "href": "/brands/yeezy" },
           { "id": "kobe", "label": "Kobe", "href": "/brands/kobe" }
@@ -111,67 +112,7 @@
     ]
   },
 
-  "technology": {
-    "id": "technology",
-    "label": "Технологии",
-    "columns": [
-      {
-        "id": "tech-cushioning",
-        "title": "Амортизация",
-        "items": [
-          { "id": "tech-nike-air", "label": "Nike Air", "href": "/technology/nike-air" },
-          { "id": "tech-zoomx", "label": "Nike ZoomX", "href": "/technology/zoomx" },
-          { "id": "tech-boost", "label": "Adidas Boost", "href": "/technology/boost" },
-          { "id": "tech-fresh-foam", "label": "New Balance Fresh Foam", "href": "/technology/fresh-foam" }
-        ]
-      },
-      {
-        "id": "tech-materials",
-        "title": "Материалы",
-        "items": [
-          { "id": "tech-flyknit", "label": "Flyknit", "href": "/technology/flyknit" },
-          { "id": "tech-primeknit", "label": "Primeknit", "href": "/technology/primeknit" },
-          { "id": "tech-gore-tex", "label": "Gore-Tex", "href": "/technology/gore-tex" },
-          { "id": "tech-dri-fit", "label": "Dri-FIT", "href": "/technology/dri-fit" }
-        ]
-      },
-      {
-        "id": "tech-innovation",
-        "title": "Инновации",
-        "items": [
-          { "id": "tech-sustainability", "label": "Устойчивые материалы", "href": "/technology/sustainability" },
-          { "id": "tech-smart-shoes", "label": "Умная обувь", "href": "/technology/smart-shoes" }
-        ]
-      }
-    ]
-  },
-
-  "about": {
-    "id": "about",
-    "label": "О нас",
-    "columns": [
-      {
-        "id": "about-company",
-        "title": "Компания",
-        "items": [
-          { "id": "about-us", "label": "О компании", "href": "/about" },
-          { "id": "about-mission", "label": "Наша миссия", "href": "/about/mission" },
-          { "id": "about-stores", "label": "Магазины", "href": "/about/stores" },
-          { "id": "about-careers", "label": "Вакансии", "href": "/about/careers" }
-        ]
-      },
-      {
-        "id": "about-contacts",
-        "title": "Контакты",
-        "items": [
-          { "id": "about-contact-us", "label": "Связаться с нами", "href": "/about/contacts" },
-          { "id": "about-faq", "label": "Часто задаваемые вопросы", "href": "/about/faq" },
-          { "id": "about-press", "label": "Пресс-центр", "href": "/about/press" }
-        ]
-      }
-    ]
-  },
-
+ 
   "delivery": {
     "id": "delivery",
     "label": "Доставка",

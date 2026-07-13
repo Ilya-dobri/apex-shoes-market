@@ -19,6 +19,9 @@ interface ShoesProps {
 
 const Shoes = ({id, imageUrl, name, price, rating, sizes}: ShoesProps) => {
    
+   const imagesArray = Array.isArray(imageUrl) 
+    ? imageUrl 
+    : [imageUrl];
   const toggleFavorite = useFavoriteStore((state) => state.toggleFavorite)
   const favorites = useFavoriteStore((state) => state.favorites);
   const isFavorite = favorites.some((fav) => fav.id === String(id));
@@ -69,7 +72,7 @@ const Shoes = ({id, imageUrl, name, price, rating, sizes}: ShoesProps) => {
   <div className="w-full h-44 flex items-center justify-center mb-4">
     <Link href={`/products/${id}`}>
       <motion.img whileHover={{ scale: 1.08, rotate: -2 }} transition={{ duration: 0.3 }} 
-        src={imageUrl}
+        src={imagesArray[0]}
         alt={name}
         className="object-contain max-h-full mix-blend-multiply cursor-pointer" 
       />

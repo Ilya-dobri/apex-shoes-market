@@ -385,7 +385,7 @@
     "id": "eF2gH3iJ4kL",
     "categoryId": 3,
     "name": "Nike Zoom TR",
-    "brand": "nike",
+    "brand": "nike-acg",
     "collection": "new",
     "section": "shoes",
     "type": "training",
@@ -487,8 +487,13 @@
     "categoryId": 4,
     "name": "Converse Chuck 70",
     "brand": "converse",
+    "soon": "coming-soon",
     "collection": "new",
-    "section": "shoes",
+    "section": [
+      "shoes",
+      "coming-soon",
+      "bestsellers"
+    ],
     "type": "lifestyle",
     "technology": null,
     "price": 90,
@@ -501,8 +506,11 @@
     "categoryId": 4,
     "name": "Vans Old Skool",
     "brand": "vans",
-    "collection": "new",
-    "section": "shoes",
+    "collection": ["new", "sale"],
+    "section": [
+      "shoes",
+      "summer"
+    ],
     "type": "lifestyle",
     "technology": null,
     "price": 70,
@@ -520,7 +528,12 @@
     "type": "lifestyle",
     "technology": null,
     "price": 85,
-    "imageUrl": "https://placehold.co/400x400/fce7f3/be185d?text=Lifestyle+7",
+    "imageUrl": [
+       
+       "https://yesoriginal.com.ua/media/cache/catalog/products/fa/68/8b/90084337-2286588-670x705_-jpg-84.webp",
+       "https://yesoriginal.com.ua/media/cache/catalog/products/3d/fb/d5/90084337-2286591-670x705_-jpg-84.webp",
+       "https://yesoriginal.com.ua/media/cache/catalog/products/c1/b5/22/90084337-2286592-670x705_-jpg-84.webp"
+    ],
     "rating": 4.4,
     "sizes": [41, 42, 43]
   },
@@ -542,7 +555,7 @@
     "id": "nO5pQ6rS7tU",
     "categoryId": 4,
     "name": "Nike Dunk Low",
-    "brand": "nike",
+    "brand": "nike-acg",
     "collection": "new",
     "section": "shoes",
     "type": "lifestyle",

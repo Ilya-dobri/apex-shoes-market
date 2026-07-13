@@ -32,6 +32,7 @@ const ProductPage = async ({ params }: any) => {
   return (
     // ВАЖНО: передаем данные о кроссовке внутрь компонента!
     <ProductCart product={product} />
+    
   );
 };
 

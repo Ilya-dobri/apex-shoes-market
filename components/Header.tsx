@@ -51,11 +51,13 @@ const scheduleClose = () => {
   useEffect(() =>{
      const fetchCategories = async () => {
     const data = await getMasiveCategoriesFromDB(); 
-  
+      
     setCategori(data || []);
   };
   fetchCategories();
   }, [])
+
+  
 
   useMotionValueEvent(scrollY, "change", (latest) => {
     if (latest > 20) {
@@ -89,7 +91,8 @@ const scheduleClose = () => {
 
  
       <div className="hidden lg:flex justify-center items-center gap-1 relative">
-  {categori?.map((cat: Categories) => (
+  <div className="flex justify-center items-center ">
+    {categori?.map((cat: Categories) => (
     <div
       key={cat.id}
 onMouseEnter={() => openMenu(cat)}
@@ -99,9 +102,16 @@ onMouseEnter={() => openMenu(cat)}
         {cat.label}
       </Button>
 
-     
     </div>
+    
   ))}
+  <Button  className="cursor-pointer text-[18px] xl:text-[20px] tracking-widest font-bold" variant="ghost">
+        О нас
+      </Button >
+     <Button className="cursor-pointer text-[18px] xl:text-[20px] tracking-widest font-bold" variant="ghost">
+       Тихнологии
+      </Button>
+  </div>
   {isVisible && (
       <div
         className="fixed  left-0 top-17 w-screen bg-white shadow-lg grid grid-cols-4 gap-8 p-8 z-50"

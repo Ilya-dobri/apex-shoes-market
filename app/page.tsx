@@ -19,7 +19,7 @@ import CategoriesUnderShoes from "@/components/CategoriesUnderShoes";
 import InfoBadge from "@/components/InfoBadge";
 import TechnologiesSection from "@/components/TechnologiesSection";
 import Footer from "@/components/Footer";
-import { getMasiveCategoriesFromDB, getShoesFromDB } from "@/components/FireStore/addComponentToDB";
+import { getMasiveCategoriesFromDB, getMasivePanelsFromDB, getShoesFromDB } from "@/components/FireStore/addComponentToDB";
 
 
 
@@ -29,7 +29,7 @@ import { getMasiveCategoriesFromDB, getShoesFromDB } from "@/components/FireStor
 export default function Home() {
   const buttonID = useSportsStore((state) => state.buttonIDs);
   const [categories, setCategories] = useState<any[]>([]);
-  
+  const [panels, setPanels] = useState<any[]>([]);
 
   const [shoes, setShoes] = useState<any[]>([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -49,6 +49,21 @@ export default function Home() {
 
     fetchShoes();
   }, []); 
+
+  useEffect(() => {
+    const fetchPanels = async () => {
+      try{
+        const data = await getMasivePanelsFromDB()
+        setPanels(data)
+        }catch (error) {
+        console.error("Ошибка при получении категорий:", error);
+      }finally {
+        console.log("Категории успешно получены:", categories);
+      }
+      
+    }
+    fetchPanels()
+  }, [])
   useEffect(() => {
     const fetchCategories = async () => {
       try {
@@ -103,7 +118,7 @@ export default function Home() {
       </div>
 
       <div className="w-full max-w-[1500px] items-center mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 px-4 mt-12">
-        {categories.map((c) => (
+        {panels.map((c) => (
           <CategoriesUnderShoes key={c.id} {...c} />
         ))}
       </div>

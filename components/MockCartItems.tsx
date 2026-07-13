@@ -28,7 +28,9 @@ export default function MockCartItems() {
 
 
 
+  const handleReview = async () =>{
 
+  }
 
   const handleCheckout = async () => {
     if (items.length === 0) return;
@@ -204,6 +206,7 @@ export default function MockCartItems() {
 
         </div>
       </div>
+      
     </div>
   );
 }

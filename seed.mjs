@@ -84,9 +84,31 @@ async function uploadCategories() {
   process.exit();
 }
 
+
+async function uploadPanels() {
+ const rowData = fs.readFileSync("dataBase/panels.json", "utf-8");
+  const panelsData = JSON.parse(rowData)
+
+  await clearCollection("panels")
+
+  for (let i = 0; i < panelsData.length; ++i){
+    const panels = panelsData[i]
+
+    const { id, ...cleanData } = panels;
+
+    try {
+      await addDoc(collection(db, "panels"), cleanData);
+     
+    } catch (error) {
+      console.error(`❌ Ошибка загрузки товара ${i + 1}:`, error);
+    }
+  
+  }
+}
   
 
 
 // Запускаем
-uploadData();
+ uploadData();
 // uploadCategories();
+// uploadPanels()

@@ -82,7 +82,7 @@ const ProductActions = ({ product }: ProductActionsProps) => {
               <button
                 key={sizeStr}
                 onClick={() => setSelectedSize(sizeStr)}
-                className={`border rounded-lg px-4 py-2 cursor-pointer transition-colors font-semibold ${
+                className={`border  rounded-lg px-4 py-2 cursor-pointer transition-colors font-semibold ${
                   isSelected 
                     ? "bg-black text-white border-black" 
                     : "text-gray-700 border-gray-300 hover:border-black"
@@ -98,7 +98,7 @@ const ProductActions = ({ product }: ProductActionsProps) => {
      
       <button
         onClick={handleAdd}
-        className="mt-4 bg-black text-white py-4 rounded-xl font-bold hover:bg-gray-800 transition-colors w-full"
+        className="mt-4 w bg-black text-white py-4 rounded-xl font-bold hover:bg-gray-800 transition-colors w-2xs"
       >
         Добавить в корзину
       </button>

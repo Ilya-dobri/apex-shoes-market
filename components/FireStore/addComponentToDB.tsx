@@ -1,4 +1,4 @@
-import { collection, addDoc, getDocs, getDoc, doc, setDoc } from "firebase/firestore";
+import { collection, addDoc, getDocs, getDoc, doc, setDoc, updateDoc, arrayUnion } from "firebase/firestore";
 import { db } from "../../dataBase/firebaseConfig";
 
 
@@ -57,6 +57,33 @@ export const getMasiveCategoriesFromDB = async () => {
   }
 };
 
+export const getMasivePanelsFromDB = async () => {
+  try {
+    const querySnapshots = await getDocs(collection(db, `panels`));
+    const categoriesList: any[] = [];
+    querySnapshots.forEach((doc) => {
+    
+      categoriesList.push({ id: doc.id, ...doc.data() });
+    });
+    return categoriesList;
+  } catch (error) {
+    console.error("Ошибка при получении категорий:", error);
+    return [];
+  }
+};
+  
+
+export const saveReviewsToDB = async (userId: string, newReview: any) => {
+  try{
+    const docRef = doc(db, 'shoes', userId)
+   await updateDoc(docRef, {
+      reviews: arrayUnion(newReview)
+    });
+  }
+   catch (error) {
+    console.error("Ошибка при сохранении в БД:", error);
+  }
+}
 
 export const saveFavoritesToDB = async (userId: string, currentFavorites: any[]) => {
   try {

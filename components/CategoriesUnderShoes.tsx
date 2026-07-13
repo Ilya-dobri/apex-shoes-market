@@ -5,7 +5,7 @@ import { Categories } from '@/types/types'
 import React from 'react'
 import { motion } from 'framer-motion'
 
-const CategoriesUnderShoes = ({ title, description, imageUrl }: Categories) => {
+const CategoriesUnderShoes = ({ title, description, image }: Categories) => {
 
 
    return (
@@ -17,7 +17,7 @@ const CategoriesUnderShoes = ({ title, description, imageUrl }: Categories) => {
       className="relative w-full max-w-[800px] h-[150px] sm:h-[400px] rounded-[2rem] overflow-hidden shadow-lg group odd:self-start even:self-end"
     >
       <img
-        src={imageUrl}
+        src={image}
         alt={title}
         className="absolute inset-0 w-full h-full object-cover object-right"
       />

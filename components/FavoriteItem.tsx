@@ -11,20 +11,24 @@ type FavoriteProductType = {
     
   };
   size: string
-  onRemove: () => void;
+  onRemove?: () => void;
+  cart?:boolean
+  rating: number
+  title?: string
 };
 
 
-const FavoriteItem = ({ product, size, onRemove }: FavoriteProductType) => {
+const FavoriteItem = ({ cart, product, size, onRemove , rating, title }: FavoriteProductType) => {
+  
   return (
     <div className=" group relative bg-white rounded-[24px] p-4 border border-[#f0f2f5] shadow-sm hover:shadow-lg transition-all duration-300 w-65 flex flex-col">
       {/* Кнопка удаления */}
-      <button
+      {cart ? <button
         onClick={onRemove}
         className="absolute top-4 right-4 z-10 p-2 bg-white/80 backdrop-blur-sm rounded-full text-gray-400 hover:text-red-500 hover:bg-red-50 transition-colors shadow-sm"
       >
         <Trash2 size={18} />
-      </button>
+      </button>: ''}
 
       {/* Изображение */}
       <div className="relative aspect-square w-full overflow-hidden rounded-2xl bg-[#f9fafb] mb-4">
@@ -49,6 +53,11 @@ const FavoriteItem = ({ product, size, onRemove }: FavoriteProductType) => {
         </h3>
         <p className="font-bold text-[18px] text-[#222]">
           {product.price.toLocaleString("ru-RU")} ₽
+        </p>
+        <p>
+          <span className="text-yellow-400">
+                        ★
+                      </span>{rating}
         </p>
         <p>
           {size}
