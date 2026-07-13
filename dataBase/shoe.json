@@ -9,8 +9,13 @@
     "type": "running",
     "technology": "zoomx",
     "price": 130,
-    "imageUrl": ["https://yesoriginal.com.ua/media/cache/catalog/products/15/4a/5f/90161495-0-670x705_-jpg-84.webp",
-  "https://yesoriginal.com.ua/media/cache/catalog/products/26/be/62/90042629-0-670x705_-jpg-84.webp", "https://yesoriginal.com.ua/media/cache/catalog/products/87/d3/6e/90042629-1997003-670x705_-jpg-84.webp", "https://yesoriginal.com.ua/media/cache/catalog/products/c9/13/ab/90042629-1997004-670x705_-jpg-84.webp", "https://yesoriginal.com.ua/media/cache/catalog/products/05/99/6a/90042629-1997005-670x705_-jpg-84.webp"],
+    "imageUrl": [
+      "https://yesoriginal.com.ua/media/cache/catalog/products/15/4a/5f/90161495-0-670x705_-jpg-84.webp",
+      "https://yesoriginal.com.ua/media/cache/catalog/products/26/be/62/90042629-0-670x705_-jpg-84.webp",
+      "https://yesoriginal.com.ua/media/cache/catalog/products/87/d3/6e/90042629-1997003-670x705_-jpg-84.webp",
+      "https://yesoriginal.com.ua/media/cache/catalog/products/c9/13/ab/90042629-1997004-670x705_-jpg-84.webp",
+      "https://yesoriginal.com.ua/media/cache/catalog/products/05/99/6a/90042629-1997005-670x705_-jpg-84.webp"
+    ],
     "rating": 4.8,
     "sizes": [40, 41, 42, 43, 44]
   },
@@ -24,7 +29,13 @@
     "type": "running",
     "technology": "boost",
     "price": 190,
-    "imageUrl": ["https://yesoriginal.com.ua/media/cache/catalog/products/fe/32/43/90020691-0-670x705_-jpg-84.webp","https://yesoriginal.com.ua/media/cache/catalog/products/11/b1/f6/90020691-1898551-670x705_-jpg-84.webp", "https://yesoriginal.com.ua/media/cache/catalog/products/ee/e2/ad/90020691-1898553-670x705_-jpg-84.webp", "https://yesoriginal.com.ua/media/cache/catalog/products/e2/43/55/90020691-1898554-670x705_-jpg-84.webp", "https://yesoriginal.com.ua/media/cache/catalog/products/11/dd/9e/90020691-1898556-670x705_-jpg-84.webp"],
+    "imageUrl": [
+      "https://yesoriginal.com.ua/media/cache/catalog/products/fe/32/43/90020691-0-670x705_-jpg-84.webp",
+      "https://yesoriginal.com.ua/media/cache/catalog/products/11/b1/f6/90020691-1898551-670x705_-jpg-84.webp",
+      "https://yesoriginal.com.ua/media/cache/catalog/products/ee/e2/ad/90020691-1898553-670x705_-jpg-84.webp",
+      "https://yesoriginal.com.ua/media/cache/catalog/products/e2/43/55/90020691-1898554-670x705_-jpg-84.webp",
+      "https://yesoriginal.com.ua/media/cache/catalog/products/11/dd/9e/90020691-1898556-670x705_-jpg-84.webp"
+    ],
     "rating": 4.5,
     "sizes": [39, 40, 42, 45]
   },
@@ -38,7 +49,12 @@
     "type": "running",
     "technology": null,
     "price": 145,
-    "imageUrl": ["https://yesoriginal.com.ua/media/cache/catalog/products/27/9e/f5/90264500-main-670x705_-jpg-84.webp", "https://yesoriginal.com.ua/media/catalog/products/a7/dd/b4/90264500-2.jpg", "https://yesoriginal.com.ua/media/catalog/products/5e/c5/1e/90264500-3.jpg", "https://yesoriginal.com.ua/media/catalog/products/5e/c5/1e/90264500-3.jpg"],
+    "imageUrl": [
+      "https://yesoriginal.com.ua/media/cache/catalog/products/27/9e/f5/90264500-main-670x705_-jpg-84.webp",
+      "https://yesoriginal.com.ua/media/catalog/products/a7/dd/b4/90264500-2.jpg",
+      "https://yesoriginal.com.ua/media/catalog/products/5e/c5/1e/90264500-3.jpg",
+      "https://yesoriginal.com.ua/media/catalog/products/5e/c5/1e/90264500-3.jpg"
+    ],
     "rating": 4.9,
     "sizes": [41, 42, 43, 44]
   },
@@ -52,7 +68,12 @@
     "type": "running",
     "technology": null,
     "price": 160,
-    "imageUrl": ["https://yesoriginal.com.ua/media/cache/catalog/products/69/05/7d/90165502-0-670x705_-jpg-84.webp","https://yesoriginal.com.ua/media/cache/catalog/products/e2/65/e2/90165502-2743451-670x705_-jpg-84.webp", "https://yesoriginal.com.ua/media/cache/catalog/products/9a/84/7a/90165502-2743452-670x705_-jpg-84.webp", "https://yesoriginal.com.ua/media/cache/catalog/products/19/8e/a4/90165502-2743449-670x705_-jpg-84.webp"],
+    "imageUrl": [
+      "https://yesoriginal.com.ua/media/cache/catalog/products/69/05/7d/90165502-0-670x705_-jpg-84.webp",
+      "https://yesoriginal.com.ua/media/cache/catalog/products/e2/65/e2/90165502-2743451-670x705_-jpg-84.webp",
+      "https://yesoriginal.com.ua/media/cache/catalog/products/9a/84/7a/90165502-2743452-670x705_-jpg-84.webp",
+      "https://yesoriginal.com.ua/media/cache/catalog/products/19/8e/a4/90165502-2743449-670x705_-jpg-84.webp"
+    ],
     "rating": 4.7,
     "sizes": [40, 41, 42, 43, 44, 45]
   },
@@ -66,7 +87,11 @@
     "type": "running",
     "technology": "fresh-foam",
     "price": 165,
-    "imageUrl": ["https://yesoriginal.com.ua/media/cache/catalog/products/99/6f/2d/90030124-0-670x705_-jpg-84.webp", "https://yesoriginal.com.ua/media/cache/catalog/products/c4/9b/57/90010858-1497564-670x705_-jpg-84.webp", "https://yesoriginal.com.ua/media/cache/catalog/products/35/18/57/90010858-1497566-670x705_-jpg-84.webp"],
+    "imageUrl": [
+      "https://yesoriginal.com.ua/media/cache/catalog/products/99/6f/2d/90030124-0-670x705_-jpg-84.webp",
+      "https://yesoriginal.com.ua/media/cache/catalog/products/c4/9b/57/90010858-1497564-670x705_-jpg-84.webp",
+      "https://yesoriginal.com.ua/media/cache/catalog/products/35/18/57/90010858-1497566-670x705_-jpg-84.webp"
+    ],
     "rating": 4.6,
     "sizes": [42, 43, 44]
   },
@@ -80,7 +105,13 @@
     "type": "running",
     "technology": null,
     "price": 140,
-    "imageUrl": ["https://sportano.ua/img/b52b588476b8def9e5d485faf958f16f/5/0/5059882883619_41-jpg/krosivki-dlja-bigu-cholovichi-mizuno-revolt-4-white-eventide-india-ink-1770193.jpg","https://yesoriginal.com.ua/media/cache/catalog/products/82/d5/36/90097389-2380462-670x705_-jpg-84.webp", "https://yesoriginal.com.ua/media/cache/catalog/products/04/1a/34/90097389-2380464-670x705_-jpg-84.webp", "https://yesoriginal.com.ua/media/cache/catalog/products/b0/84/bc/90097389-2380461-670x705_-jpg-84.webp", "https://yesoriginal.com.ua/media/cache/catalog/products/72/9b/cd/90097389-2380463-670x705_-jpg-84.webp"],
+    "imageUrl": [
+      "https://sportano.ua/img/b52b588476b8def9e5d485faf958f16f/5/0/5059882883619_41-jpg/krosivki-dlja-bigu-cholovichi-mizuno-revolt-4-white-eventide-india-ink-1770193.jpg",
+      "https://yesoriginal.com.ua/media/cache/catalog/products/82/d5/36/90097389-2380462-670x705_-jpg-84.webp",
+      "https://yesoriginal.com.ua/media/cache/catalog/products/04/1a/34/90097389-2380464-670x705_-jpg-84.webp",
+      "https://yesoriginal.com.ua/media/cache/catalog/products/b0/84/bc/90097389-2380461-670x705_-jpg-84.webp",
+      "https://yesoriginal.com.ua/media/cache/catalog/products/72/9b/cd/90097389-2380463-670x705_-jpg-84.webp"
+    ],
     "rating": 4.4,
     "sizes": [39, 40, 41, 42]
   },
@@ -94,7 +125,11 @@
     "type": "running",
     "technology": null,
     "price": 140,
-    "imageUrl": ["https://sportano.ua/img/b52b588476b8def9e5d485faf958f16f/1/9/195021171867_23-jpg/krosivki-dlja-bigu-cholovichi-saucony-lancer-black-white-1891232.jpg", "https://yesoriginal.com.ua/media/cache/catalog/products/a8/0d/22/90251585-0-670x705_-jpg-84.webp","https://yesoriginal.com.ua/media/cache/catalog/products/a8/7e/a6/90251585-2-670x705_-jpg-84.webp"],
+    "imageUrl": [
+      "https://sportano.ua/img/b52b588476b8def9e5d485faf958f16f/1/9/195021171867_23-jpg/krosivki-dlja-bigu-cholovichi-saucony-lancer-black-white-1891232.jpg",
+      "https://yesoriginal.com.ua/media/cache/catalog/products/a8/0d/22/90251585-0-670x705_-jpg-84.webp",
+      "https://yesoriginal.com.ua/media/cache/catalog/products/a8/7e/a6/90251585-2-670x705_-jpg-84.webp"
+    ],
     "rating": 4.2,
     "sizes": [40, 42, 44, 45]
   },
@@ -140,7 +175,6 @@
     "rating": 4.8,
     "sizes": [40, 41, 43, 45]
   },
-
 
   {
     "id": "pA3kL9mX2qR",
@@ -283,8 +317,7 @@
     "sizes": [40, 42, 44]
   },
 
-
- {
+  {
     "id": "aB1cD2eF3gH",
     "categoryId": 3,
     "name": "Nike Metcon 9",
@@ -425,8 +458,6 @@
     "sizes": [42, 43, 44]
   },
 
-
-
   {
     "id": "bC1dE2fG3hI",
     "categoryId": 4,
@@ -490,11 +521,7 @@
     "brand": "converse",
     "soon": "coming-soon",
     "collection": "new",
-    "section": [
-      "shoes",
-      "coming-soon",
-      "bestsellers"
-    ],
+    "section": ["shoes", "coming-soon", "bestsellers"],
     "type": "lifestyle",
     "technology": null,
     "price": 90,
@@ -508,10 +535,7 @@
     "name": "Vans Old Skool",
     "brand": "vans",
     "collection": ["new", "sale"],
-    "section": [
-      "shoes",
-      "summer"
-    ],
+    "section": ["shoes", "summer"],
     "type": "lifestyle",
     "technology": null,
     "price": 70,
@@ -530,10 +554,9 @@
     "technology": null,
     "price": 85,
     "imageUrl": [
-       
-       "https://yesoriginal.com.ua/media/cache/catalog/products/fa/68/8b/90084337-2286588-670x705_-jpg-84.webp",
-       "https://yesoriginal.com.ua/media/cache/catalog/products/3d/fb/d5/90084337-2286591-670x705_-jpg-84.webp",
-       "https://yesoriginal.com.ua/media/cache/catalog/products/c1/b5/22/90084337-2286592-670x705_-jpg-84.webp"
+      "https://yesoriginal.com.ua/media/cache/catalog/products/fa/68/8b/90084337-2286588-670x705_-jpg-84.webp",
+      "https://yesoriginal.com.ua/media/cache/catalog/products/3d/fb/d5/90084337-2286591-670x705_-jpg-84.webp",
+      "https://yesoriginal.com.ua/media/cache/catalog/products/c1/b5/22/90084337-2286592-670x705_-jpg-84.webp"
     ],
     "rating": 4.4,
     "sizes": [41, 42, 43]
@@ -580,7 +603,6 @@
     "rating": 4.6,
     "sizes": [39, 42, 44]
   },
-
 
   {
     "id": "cD1eF2gH3iJ",
@@ -722,11 +744,4 @@
     "rating": 4.6,
     "sizes": [40, 41, 42, 43, 44, 45]
   }
-
-
-
-
-
 ]
-
-
