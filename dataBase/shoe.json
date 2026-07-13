@@ -9,7 +9,8 @@
     "type": "running",
     "technology": "zoomx",
     "price": 130,
-    "imageUrl": "https://yesoriginal.com.ua/media/cache/catalog/products/15/4a/5f/90161495-0-670x705_-jpg-84.webp",
+    "imageUrl": ["https://yesoriginal.com.ua/media/cache/catalog/products/15/4a/5f/90161495-0-670x705_-jpg-84.webp",
+  "https://yesoriginal.com.ua/media/cache/catalog/products/26/be/62/90042629-0-670x705_-jpg-84.webp", "https://yesoriginal.com.ua/media/cache/catalog/products/87/d3/6e/90042629-1997003-670x705_-jpg-84.webp", "https://yesoriginal.com.ua/media/cache/catalog/products/c9/13/ab/90042629-1997004-670x705_-jpg-84.webp", "https://yesoriginal.com.ua/media/cache/catalog/products/05/99/6a/90042629-1997005-670x705_-jpg-84.webp"],
     "rating": 4.8,
     "sizes": [40, 41, 42, 43, 44]
   },
@@ -23,7 +24,7 @@
     "type": "running",
     "technology": "boost",
     "price": 190,
-    "imageUrl": "https://yesoriginal.com.ua/media/cache/catalog/products/fe/32/43/90020691-0-670x705_-jpg-84.webp",
+    "imageUrl": ["https://yesoriginal.com.ua/media/cache/catalog/products/fe/32/43/90020691-0-670x705_-jpg-84.webp","https://yesoriginal.com.ua/media/cache/catalog/products/11/b1/f6/90020691-1898551-670x705_-jpg-84.webp", "https://yesoriginal.com.ua/media/cache/catalog/products/ee/e2/ad/90020691-1898553-670x705_-jpg-84.webp", "https://yesoriginal.com.ua/media/cache/catalog/products/e2/43/55/90020691-1898554-670x705_-jpg-84.webp", "https://yesoriginal.com.ua/media/cache/catalog/products/11/dd/9e/90020691-1898556-670x705_-jpg-84.webp"],
     "rating": 4.5,
     "sizes": [39, 40, 42, 45]
   },
@@ -37,7 +38,7 @@
     "type": "running",
     "technology": null,
     "price": 145,
-    "imageUrl": "https://yesoriginal.com.ua/media/cache/catalog/products/27/9e/f5/90264500-main-670x705_-jpg-84.webp",
+    "imageUrl": ["https://yesoriginal.com.ua/media/cache/catalog/products/27/9e/f5/90264500-main-670x705_-jpg-84.webp", "https://yesoriginal.com.ua/media/catalog/products/a7/dd/b4/90264500-2.jpg", "https://yesoriginal.com.ua/media/catalog/products/5e/c5/1e/90264500-3.jpg", "https://yesoriginal.com.ua/media/catalog/products/5e/c5/1e/90264500-3.jpg"],
     "rating": 4.9,
     "sizes": [41, 42, 43, 44]
   },
@@ -51,7 +52,7 @@
     "type": "running",
     "technology": null,
     "price": 160,
-    "imageUrl": "https://yesoriginal.com.ua/media/cache/catalog/products/69/05/7d/90165502-0-670x705_-jpg-84.webp",
+    "imageUrl": ["https://yesoriginal.com.ua/media/cache/catalog/products/69/05/7d/90165502-0-670x705_-jpg-84.webp","https://yesoriginal.com.ua/media/cache/catalog/products/e2/65/e2/90165502-2743451-670x705_-jpg-84.webp", "https://yesoriginal.com.ua/media/cache/catalog/products/9a/84/7a/90165502-2743452-670x705_-jpg-84.webp", "https://yesoriginal.com.ua/media/cache/catalog/products/19/8e/a4/90165502-2743449-670x705_-jpg-84.webp"],
     "rating": 4.7,
     "sizes": [40, 41, 42, 43, 44, 45]
   },
@@ -65,7 +66,7 @@
     "type": "running",
     "technology": "fresh-foam",
     "price": 165,
-    "imageUrl": "https://yesoriginal.com.ua/media/cache/catalog/products/99/6f/2d/90030124-0-670x705_-jpg-84.webp",
+    "imageUrl": ["https://yesoriginal.com.ua/media/cache/catalog/products/99/6f/2d/90030124-0-670x705_-jpg-84.webp", "https://yesoriginal.com.ua/media/cache/catalog/products/c4/9b/57/90010858-1497564-670x705_-jpg-84.webp", "https://yesoriginal.com.ua/media/cache/catalog/products/35/18/57/90010858-1497566-670x705_-jpg-84.webp"],
     "rating": 4.6,
     "sizes": [42, 43, 44]
   },

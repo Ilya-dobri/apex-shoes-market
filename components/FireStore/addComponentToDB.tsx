@@ -79,6 +79,7 @@ export const saveReviewsToDB = async (userId: string, newReview: any) => {
    await updateDoc(docRef, {
       reviews: arrayUnion(newReview)
     });
+   
   }
    catch (error) {
     console.error("Ошибка при сохранении в БД:", error);
