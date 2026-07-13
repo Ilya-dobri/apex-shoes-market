@@ -18,7 +18,7 @@ type FavoriteProductType = {
 };
 
 
-const FavoriteItem = ({ cart, product, size, onRemove , rating, title }: FavoriteProductType) => {
+const FavoriteItem = ({ cart, product, size, onRemove , rating }: FavoriteProductType) => {
   
   return (
     <div className=" group relative bg-white rounded-[24px] p-4 border border-[#f0f2f5] shadow-sm hover:shadow-lg transition-all duration-300 w-65 flex flex-col">

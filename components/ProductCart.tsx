@@ -174,7 +174,7 @@ const ProductCart = ({ product }: any) => {
               size="M"
               cart={false}
               rating={Number(avgRating)}
-              title={product.name}
+              
             />
           </div>
         </div>
