@@ -3,7 +3,7 @@ import { collection, getDocs, doc, getDoc } from "firebase/firestore";
 import { db } from '@/dataBase/firebaseConfig';
 import ProductCart from '@/components/ProductCart';
 
-export const dynamicParams = false;
+// export const dynamicParams = false;
 export async function generateStaticParams() {
   const querySnapshot = await getDocs(collection(db, "shoes"));
    
