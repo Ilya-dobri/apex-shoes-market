@@ -37,6 +37,7 @@ const Shoes = ({id, imageUrl, name, price, rating, sizes}: ShoesProps) => {
       name: name,
       imageUrl,
       price,
+      rating,
       size: sizes && sizes.length > 0 ? String(sizes[0]) : "",
     };
 

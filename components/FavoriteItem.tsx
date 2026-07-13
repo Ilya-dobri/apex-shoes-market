@@ -13,7 +13,7 @@ type FavoriteProductType = {
   size: string
   onRemove?: () => void;
   cart?:boolean
-  rating: number
+  rating?: number
   title?: string
 };
 

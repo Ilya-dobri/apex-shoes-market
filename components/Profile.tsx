@@ -235,6 +235,7 @@ const Profile = () => {
               <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6">
                 {favorites.map((f) => (
                   <FavoriteItem
+                    rating={f.rating}
                     size={f.size}
                     onRemove={() => removeFavorite(f)}
                     key={f.id + f.size}

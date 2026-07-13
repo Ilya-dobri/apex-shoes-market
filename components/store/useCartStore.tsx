@@ -7,6 +7,7 @@ export interface CartItem {
   quantity: number;
   size: string;
   imageUrl: string;
+  rating?: number
   
 }
 
