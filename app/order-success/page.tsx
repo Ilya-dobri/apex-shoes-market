@@ -6,7 +6,7 @@ import { doc, updateDoc } from 'firebase/firestore';
 import { db } from '@/dataBase/firebaseConfig';
 import Link from 'next/link';
 
-// 1. Выносим логику и интерфейс во внутренний компонент
+
 function OrderSuccessContent() {
   const searchParams = useSearchParams();
   const orderId = searchParams.get('orderId');
@@ -38,7 +38,7 @@ function OrderSuccessContent() {
     updateOrderStatus();
   }, [orderId]);
 
-  // 2. ВСЕ состояния (loading, success, error) находятся внутри одного return
+  
   return (
     <>
       {status === 'loading' && (
@@ -86,12 +86,12 @@ function OrderSuccessContent() {
   );
 }
 
-// 3. Главный компонент страницы с Suspense
+
 export default function OrderSuccessPage() {
   return (
     <div className="min-h-screen bg-[#F8F9FA] flex items-center justify-center font-sans px-4">
       <div className="bg-white p-8 rounded-[32px] shadow-sm max-w-md w-full text-center">
-        {/* Оборачиваем наш контент в Suspense, чтобы Next.js мог сделать build */}
+  
         <Suspense fallback={
           <div className="space-y-4">
             <p className="text-xl font-medium text-gray-900">Загрузка данных...</p>

@@ -34,11 +34,11 @@ const useFavoriteStore = create<FavoriteState>()(
         }
     },
 
-    // 2. УДАЛЕНИЕ
+ 
     removeFavorite: async (item) => {
         const user = auth.currentUser;
         
-        // Получаем текущий массив из Zustand
+       
         const currentFavorites = get().favorites;
         
        
@@ -47,7 +47,7 @@ const useFavoriteStore = create<FavoriteState>()(
         );
         set({ favorites: updatedFavorites });
 
-        // Тихо отправляем новый массив в Firebase в фоне
+
         if (user) {
             try {
                 const favRef = doc(db, 'favorites', user.uid);
@@ -58,27 +58,27 @@ const useFavoriteStore = create<FavoriteState>()(
         }
     },
     
-    // 3. ДОБАВЛЕНИЕ / УДАЛЕНИЕ (Клик по сердечку в каталоге)
+   
     toggleFavorite: async (item) => {
         const user = auth.currentUser;
         const currentFavorites = get().favorites;
         
         const exists = currentFavorites.some(
-            (fav) => fav.id === item.id && fav.size === item.size
+            (fav) => fav.id === item.id
         );
 
         let updatedFavorites;
         if (exists) {
             updatedFavorites = currentFavorites.filter(
-                (fav) => !(fav.id === item.id && fav.size === item.size)
+                (fav) => !(fav.id === item.id )
             );
         } else {
             updatedFavorites = [...currentFavorites, { ...item, quantity: 1 }];
         }
 
-        set({ favorites: updatedFavorites }); // Обновили UI
+        set({ favorites: updatedFavorites });
 
-        // Синхронизируем с Firebase
+       
         if (user) {
             const favRef = doc(db, 'favorites', user.uid);
             await updateDoc(favRef, { items: updatedFavorites });

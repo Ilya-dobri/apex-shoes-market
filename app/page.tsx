@@ -88,7 +88,7 @@ export default function Home() {
          <div className="w-full h-full text-3xl p-3 ">
         <h1>Хиты продаж</h1>
       </div>
-        {/* 4. Показываем загрузку, пока ждем ответ от Firebase */}
+       
         {isLoading ? (
           <div className="text-center py-20 text-2xl font-bold">
             Загрузка каталога...
@@ -96,7 +96,7 @@ export default function Home() {
         ) : (
           <Carousel >
             <CarouselContent className="-ml-4">
-              {/* 5. Заменяем старый JSON (shoe) на наш стейт с базой данных (shoes) */}
+             
               {shoes
                 .filter((item) => buttonID === null || item.categoryId === buttonID)
                 .map((s) => (

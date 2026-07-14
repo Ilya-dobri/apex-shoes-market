@@ -92,19 +92,16 @@ const scheduleClose = () => {
  
       <div className="hidden lg:flex justify-center items-center gap-1 relative">
   <div className="flex justify-center items-center ">
-    {categori?.map((cat: Categories) => (
-    <div
-      key={cat.id}
-onMouseEnter={() => openMenu(cat)}
-  onMouseLeave={scheduleClose}
-    >
-      <Button className="cursor-pointer text-[18px] xl:text-[20px] tracking-widest font-bold" variant="ghost">
-        {cat.label}
-      </Button>
-
-    </div>
     
-  ))}
+
+    
+
+  <Button  className="cursor-pointer text-[18px] xl:text-[20px] tracking-widest font-bold" variant="ghost">
+        Категории
+      </Button >
+      <Button  className="cursor-pointer text-[18px] xl:text-[20px] tracking-widest font-bold" variant="ghost">
+        Доставка
+      </Button >
   <Button  className="cursor-pointer text-[18px] xl:text-[20px] tracking-widest font-bold" variant="ghost">
         О нас
       </Button >
@@ -112,24 +109,7 @@ onMouseEnter={() => openMenu(cat)}
        Тихнологии
       </Button>
   </div>
-  {isVisible && (
-      <div
-        className="fixed  left-0 top-17 w-screen bg-white shadow-lg grid grid-cols-4 gap-8 p-8 z-50"
-        onMouseEnter={() => openMenu(isVisible)}
-  onMouseLeave={scheduleClose}
-      >
-        {isVisible.columns.map((col) => (
-          <div key={col.id}>
-            <h4 className="font-bold mb-2">{col.title}</h4>
-            {col.items.map((item) => (
-              <Link key={item.id} href={item.href} className="block text-sm text-gray-600 py-1">
-                {item.label}
-              </Link>
-            ))}
-          </div>
-        ))}
-      </div>
-    )}
+  
 </div>
 
       {/* КНОПКИ ПРОФИЛЯ И КОРЗИНЫ */}

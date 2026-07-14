@@ -35,10 +35,10 @@ async function clearCollection(collectionName) {
 
 
 
-// 3. Читаем твой JSON-файл из папки dataBase
 
 
-// 4. Функция загрузки
+
+
 async function uploadData() {
 const rawData = fs.readFileSync("./dataBase/shoe.json", "utf-8");
 const shoesData = JSON.parse(rawData);
@@ -48,7 +48,7 @@ await clearCollection("shoes");
   for (let i = 0; i < shoesData.length; i++) {
     const shoe = shoesData[i];
     
-    // Убираем старый ID, Firebase выдаст свой
+   
     const { id, ...cleanData } = shoe;
     
     try {
@@ -60,7 +60,7 @@ await clearCollection("shoes");
   }
   
   console.log("🎉 Готово! Все кроссовки успешно залиты в базу!");
-  process.exit(); // Завершаем работу скрипта
+  process.exit(); 
 }
 async function uploadCategories() {
   const rawData = fs.readFileSync("./dataBase/categories.json", "utf-8");
@@ -68,7 +68,7 @@ async function uploadCategories() {
 
   await clearCollection("categories");
 
-  const entries = Object.values(categoriesData); // <-- вот это меняем
+  const entries = Object.values(categoriesData); 
 
   for (let i = 0; i < entries.length; i++) {
     const category = entries[i];

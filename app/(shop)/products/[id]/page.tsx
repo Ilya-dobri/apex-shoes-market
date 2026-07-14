@@ -31,7 +31,7 @@ const ProductPage = async ({ params }: any) => {
   const product = { id: docSnap.id, ...docSnap.data() } as any;
   
   return (
-    // ВАЖНО: передаем данные о кроссовке внутрь компонента!
+    
     <ProductCart product={product} />
     
   );

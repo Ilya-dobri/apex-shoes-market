@@ -81,14 +81,13 @@ const Profile = () => {
   return (
     <div className="min-h-screen w-full bg-[#f5f6f8] p-5 md:p-8 lg:p-12 text-[#333] font-sans pb-20">
       
-      {/* Главный контейнер сетки: разделяем экран на 2 колонки на ПК */}
+
       <div className="max-w-[1300px] mx-auto flex flex-col lg:flex-row gap-8 items-start">
         
-        {/* === ЛЕВАЯ КОЛОНКА (САЙДБАР) === */}
-        {/* Делаем её липкой (sticky), чтобы она всегда была на виду при скролле правой части */}
+       
         <aside className="w-full lg:w-[380px] flex-shrink-0 flex flex-col gap-6 lg:sticky lg:top-8">
           
-          {/* Карточка профиля */}
+          
           <div className="bg-white rounded-[30px] p-8 shadow-[0_10px_40px_rgba(0,0,0,0.03)] border border-[#f0f2f5]">
             <div className="flex items-center gap-4 mb-8 border-b pb-6">
               <div className="w-14 h-14 bg-gray-100 rounded-full flex items-center justify-center">
@@ -155,7 +154,7 @@ const Profile = () => {
                   Здесь хранится вся информация о ваших покупках и избранных кроссовках.
                 </p>
               </div>
-              {/* Декоративный элемент */}
+              
               <div className="absolute -right-8 -bottom-8 text-white/5">
                 <ShoppingBag size={120} />
               </div>
@@ -235,6 +234,7 @@ const Profile = () => {
               <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6">
                 {favorites.map((f) => (
                   <FavoriteItem
+                  cart={true}
                     rating={f.rating}
                     size={f.size}
                     onRemove={() => removeFavorite(f)}

@@ -9,7 +9,7 @@ const TechnologiesSection = () => {
 
   <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
     
-    {/* Карточка 1 */}
+    
     <div className="flex flex-col items-center text-center bg-[#fafafa] rounded-[24px] p-6 hover:bg-[#f4f4f4] transition-colors">
       <div className="text-zinc-600 mb-4 h-12 flex items-center justify-center">
         <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round">
@@ -26,7 +26,6 @@ const TechnologiesSection = () => {
       </p>
     </div>
 
-    {/* Карточка 2 */}
     <div className="flex flex-col items-center text-center bg-[#fafafa] rounded-[24px] p-6 hover:bg-[#f4f4f4] transition-colors">
       <div className="text-zinc-600 mb-4 h-12 flex items-center justify-center">
         <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round">
@@ -43,7 +42,7 @@ const TechnologiesSection = () => {
       </p>
     </div>
 
-    {/* Карточка 3 */}
+   
     <div className="flex flex-col items-center text-center bg-[#fafafa] rounded-[24px] p-6 hover:bg-[#f4f4f4] transition-colors">
       <div className="text-zinc-600 mb-4 h-12 flex items-center justify-center">
         <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round">
@@ -62,7 +61,7 @@ const TechnologiesSection = () => {
       </p>
     </div>
 
-    {/* Карточка 4 */}
+    
     <div className="flex flex-col items-center text-center bg-[#fafafa] rounded-[24px] p-6 hover:bg-[#f4f4f4] transition-colors">
       <div className="text-zinc-600 mb-4 h-12 flex items-center justify-center">
         <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round">
@@ -79,7 +78,7 @@ const TechnologiesSection = () => {
       </p>
     </div>
 
-    {/* Карточка 5 */}
+    
     <div className="flex flex-col items-center text-center bg-[#fafafa] rounded-[24px] p-6 hover:bg-[#f4f4f4] transition-colors">
       <div className="text-zinc-600 mb-4 h-12 flex items-center justify-center">
         <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round">
@@ -96,7 +95,7 @@ const TechnologiesSection = () => {
       </p>
     </div>
 
-    {/* Карточка 6 */}
+  
     <div className="flex flex-col items-center text-center bg-[#fafafa] rounded-[24px] p-6 hover:bg-[#f4f4f4] transition-colors">
       <div className="text-zinc-600 mb-4 h-12 flex items-center justify-center">
         <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round">

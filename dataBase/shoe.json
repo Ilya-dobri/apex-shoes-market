@@ -157,7 +157,7 @@
     "type": "running",
     "technology": null,
     "price": 140,
-    "imageUrl": "https://sportano.ua/img/b52b588476b8def9e5d485faf958f16f/5/0/5059431570243_23-jpg/zhinochi-bigovi-krosivki-mizuno-wave-rider-27-shirina-chorne-derevo-snigovij-pokriv-chornij-969852.jpg",
+    "imageUrl": ["https://sportano.ua/img/b52b588476b8def9e5d485faf958f16f/5/0/5059431570243_23-jpg/zhinochi-bigovi-krosivki-mizuno-wave-rider-27-shirina-chorne-derevo-snigovij-pokriv-chornij-969852.jpg", "https://sportano.ua/img/b52b588476b8def9e5d485faf958f16f/5/0/5059431570212_50-jpg/zhinochi-bigovi-krosivki-mizuno-wave-rider-27-shirina-chorne-derevo-snigovij-pokriv-chornij-892313.jpg"],
     "rating": 4.5,
     "sizes": [39, 40, 41, 42, 43, 44]
   },
