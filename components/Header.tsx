@@ -11,6 +11,8 @@ import { auth, db } from '@/dataBase/firebaseConfig';
 import { doc, getDoc } from "firebase/firestore";
 import { getMasiveCategoriesFromDB } from "./FireStore/addComponentToDB";
 import { Categories } from "@/types/types";
+import { usePathname, useRouter } from "next/navigation";
+
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState<boolean>(false);
@@ -19,8 +21,8 @@ const Header = () => {
   const [isVisible, setIsVisible] = useState<Categories | null>(null)
 
   const [categori, setCategori] = useState<Categories[]>([])
-
-
+const router = useRouter();
+const pathname = usePathname();
 const closeTimer = React.useRef<NodeJS.Timeout | null>(null);
 
 const openMenu = (cat: Categories) => {
@@ -70,6 +72,18 @@ const scheduleClose = () => {
   const items = useCartStore((state) => state.items);
   const totalCount = items.reduce((sum, item) => sum + item.quantity, 0);
 
+  const ButtomOnClick =  (() => {
+     if (pathname == "/"){
+      window.scrollBy({ top: 1000, behavior: 'smooth' });
+     }else {
+      router.push("/")
+ window.scrollBy({ top: 1000, behavior: 'smooth' });
+     }
+   
+   
+  })
+
+
   return (
     <motion.header
       className={`
@@ -96,13 +110,13 @@ const scheduleClose = () => {
 
     
 
-  <Button  className="cursor-pointer text-[18px] xl:text-[20px] tracking-widest font-bold" variant="ghost">
+ <Link href={"./catalog"}> <Button  className="cursor-pointer text-[18px] xl:text-[20px] tracking-widest font-bold" variant="ghost">
         Категории
-      </Button >
+      </Button ></Link>
       <Button  className="cursor-pointer text-[18px] xl:text-[20px] tracking-widest font-bold" variant="ghost">
         Доставка
       </Button >
-  <Button  className="cursor-pointer text-[18px] xl:text-[20px] tracking-widest font-bold" variant="ghost">
+  <Button onClick={ButtomOnClick}  className="cursor-pointer text-[18px] xl:text-[20px] tracking-widest font-bold" variant="ghost">
         О нас
       </Button >
      <Button className="cursor-pointer text-[18px] xl:text-[20px] tracking-widest font-bold" variant="ghost">

@@ -36,7 +36,21 @@ export const getShoesFromDB = async () => {
   }
 };
 
+export const getFilterMasiveFromDB = async () => {
+  try{
+    const querySnapshot = await getDocs(collection(db, "filter"));
 
+     const shoesList: any[] = []; 
+
+     querySnapshot.forEach((doc) => {
+      shoesList.push({ id: doc.id, ...doc.data() });
+     })
+     return shoesList
+  }catch(error){
+    console.error("Ошибка при получении кроссовок:", error);
+    return []; 
+  }
+}
 
 
 

@@ -105,10 +105,28 @@ async function uploadPanels() {
   
   }
 }
+  async function uploadfilter() {
+ const rowData = fs.readFileSync("dataBase/filter.json", "utf-8");
+  const filterData = JSON.parse(rowData)
+
+  await clearCollection("filter")
+
+
+
+
+    try {
+      await addDoc(collection(db, "filter"), filterData);
+     
+    } catch (error) {
+      console.error(`❌ Ошибка загрузки товара`, error);
+    }
   
+  }
+
 
 
 // Запускаем
- uploadData();
+//  uploadData();
 // uploadCategories();
 // uploadPanels()
+uploadfilter()

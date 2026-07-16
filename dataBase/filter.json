@@ -1,0 +1,29 @@
+{
+  "quickFilters": [
+    { "id": "new", "label": "Новинки", "checked": false },
+    { "id": "sale", "label": "Со скидкой", "checked": true },
+    { "id": "soon", "label": "Скоро в продаже", "checked": false }
+  ],
+  "priceRange": {
+    "min": 0,
+    "max": 300,
+    "currency": "$"
+  },
+  "brands": {
+    "title": "Бренды",
+    "limit": 6,
+    "items": [
+      { "id": "nike", "label": "Nike", "checked": false },
+      { "id": "adidas", "label": "Adidas", "checked": false },
+      { "id": "jordan", "label": "Jordan", "checked": true },
+      { "id": "anta", "label": "Anta", "checked": false },
+      { "id": "puma", "label": "Puma", "checked": false },
+      { "id": "under-armour", "label": "Under Armour", "checked": false },
+      { "id": "new-balance", "label": "New Balance", "checked": false },
+      { "id": "converse", "label": "Converse", "checked": false },
+      { "id": "vans", "label": "Vans", "checked": false },
+      { "id": "reebok", "label": "Reebok", "checked": false }
+    ]
+  }
+ 
+}

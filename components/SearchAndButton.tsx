@@ -131,19 +131,16 @@ const SearchAndButton = () => {
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
-     
       if (
         searchContainerRef.current &&
         !searchContainerRef.current.contains(event.target as Node)
       ) {
-        setIsDropdownOpen(false); 
+        setIsDropdownOpen(false);
       }
     };
 
-    
     document.addEventListener("mousedown", handleClickOutside);
 
-   
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
@@ -184,7 +181,6 @@ const SearchAndButton = () => {
             className="flex-1 bg-transparent outline-none text-[14px] text-gray-700 placeholder-gray-400 w-full"
           />
 
-          
           <button className="bg-[#5c6350] hover:bg-[#4a5040] transition-colors text-white p-3 rounded-full flex items-center justify-center ml-1">
             <svg
               width="16"
@@ -198,56 +194,49 @@ const SearchAndButton = () => {
               <path d="m21 21-4.3-4.3" />
             </svg>
           </button>
-       {isDropdownOpen && searchQuery.trim() !== "" && (
-  <ul className="absolute left-0 right-0 top-full mt-2 bg-white border border-gray-200 rounded-2xl shadow-xl z-50 overflow-y-auto py-2">
-    {filteredProducts.length > 0 ? (
-      filteredProducts.map((product) => (
-        <li key={product.id}>
-          <Link
-            href={`/products/${product.id}`}
-            className="block text-sm transition-colors"
-            onClick={() => setSearchQuery("")}
-          >
-            
-            <div className="hover:bg-gray-50 px-5 py-3 text-gray-900 flex items-center gap-4 text-sm transition-colors w-full">
-              
-             
-              <div className="w-16 h-16 flex-shrink-0 bg-gray-100 rounded-lg overflow-hidden">
-                <img
-                  className="w-full h-full object-cover"
-                  src={product.imageUrl[0]}
-                  alt={product.name}
-                />
-              </div>
+          {isDropdownOpen && searchQuery.trim() !== "" && (
+            <ul className="absolute left-0 right-0 top-full mt-2 bg-white border border-gray-200 rounded-2xl shadow-xl z-50 overflow-y-auto py-2">
+              {filteredProducts.length > 0 ? (
+                filteredProducts.map((product) => (
+                  <li key={product.id}>
+                    <Link
+                      href={`/products/${product.id}`}
+                      className="block text-sm transition-colors"
+                      onClick={() => setSearchQuery("")}
+                    >
+                      <div className="hover:bg-gray-50 px-5 py-3 text-gray-900 flex items-center gap-4 text-sm transition-colors w-full">
+                        <div className="w-16 h-16 flex-shrink-0 bg-gray-100 rounded-lg overflow-hidden">
+                          <img
+                            className="w-full h-full object-cover"
+                            src={product.imageUrl[0]}
+                            alt={product.name}
+                          />
+                        </div>
 
-              
-              <div className="flex flex-col gap-1 flex-1 min-w-0">
-           
-                <span className="font-medium text-gray-800 line-clamp-1">
-                  {product.name}
-                </span>
-                
-                <span className="text-gray-500 font-semibold text-xs">
-                  {product.price} ₽
-                </span>
-                
-              
-                <span className="text-amber-500 text-xs flex items-center gap-1 font-medium">
-                  ★ {getAverageRating(product.reviews)}
-                </span>
-              </div>
+                        <div className="flex flex-col gap-1 flex-1 min-w-0">
+                          <span className="font-medium text-gray-800 line-clamp-1">
+                            {product.name}
+                          </span>
 
-            </div>
-          </Link>
-        </li>
-      ))
-    ) : (
-      <li className="px-5 py-3 text-gray-400 text-sm">
-        Товары не найдены
-      </li>
-    )}
-  </ul>
-)}
+                          <span className="text-gray-500 font-semibold text-xs">
+                            {product.price} ₽
+                          </span>
+
+                          <span className="text-amber-500 text-xs flex items-center gap-1 font-medium">
+                            ★ {getAverageRating(product.reviews)}
+                          </span>
+                        </div>
+                      </div>
+                    </Link>
+                  </li>
+                ))
+              ) : (
+                <li className="px-5 py-3 text-gray-400 text-sm">
+                  Товары не найдены
+                </li>
+              )}
+            </ul>
+          )}
         </div>
       </div>
 
