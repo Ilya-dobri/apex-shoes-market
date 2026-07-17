@@ -117,9 +117,9 @@ export default function Home() {
         
       </div>
 
-      <div className="w-full max-w-[1500px] items-center mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 px-4 mt-12">
+      <div style={{ scrollMarginTop: "150px" }} id="buried-target-element" className=" w-full max-w-[1500px] items-center mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 px-4 mt-12">
         {panels.map((c) => (
-          <CategoriesUnderShoes key={c.id} {...c} />
+          <CategoriesUnderShoes  key={c.id} {...c} />
         ))}
       </div>
       <TechnologiesSection />

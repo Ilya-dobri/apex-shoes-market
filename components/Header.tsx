@@ -18,21 +18,14 @@ const Header = () => {
   const [isScrolled, setIsScrolled] = useState<boolean>(false);
   const { scrollY } = useScroll();
   const [userData, setUserData] = useState<any>(null);
-  const [isVisible, setIsVisible] = useState<Categories | null>(null)
 
   const [categori, setCategori] = useState<Categories[]>([])
 const router = useRouter();
 const pathname = usePathname();
-const closeTimer = React.useRef<NodeJS.Timeout | null>(null);
 
-const openMenu = (cat: Categories) => {
-  if (closeTimer.current) clearTimeout(closeTimer.current);
-  setIsVisible(cat);
-};
 
-const scheduleClose = () => {
-  closeTimer.current = setTimeout(() => setIsVisible(null), 150);
-};
+
+
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, async (currentUser) => {
@@ -74,10 +67,19 @@ const scheduleClose = () => {
 
   const ButtomOnClick =  (() => {
      if (pathname == "/"){
-      window.scrollBy({ top: 1000, behavior: 'smooth' });
+     document.getElementById("buried-target-element")?.scrollIntoView({ behavior: "smooth" });
      }else {
-      router.push("/")
- window.scrollBy({ top: 1000, behavior: 'smooth' });
+      router.push("/#buried-target-element")
+     }
+   
+   
+  })
+
+  const ButtomOnClickT =  (() => {
+     if (pathname == "/"){
+     document.getElementById("footer")?.scrollIntoView({ behavior: "smooth" });
+     }else {
+      router.push("/#footer")
      }
    
    
@@ -119,7 +121,7 @@ const scheduleClose = () => {
   <Button onClick={ButtomOnClick}  className="cursor-pointer text-[18px] xl:text-[20px] tracking-widest font-bold" variant="ghost">
         О нас
       </Button >
-     <Button className="cursor-pointer text-[18px] xl:text-[20px] tracking-widest font-bold" variant="ghost">
+     <Button onClick={ButtomOnClickT} className="cursor-pointer text-[18px] xl:text-[20px] tracking-widest font-bold" variant="ghost">
        Тихнологии
       </Button>
   </div>

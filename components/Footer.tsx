@@ -3,7 +3,7 @@ import React from 'react';
 
 const Footer = () => {
   return (
-    <footer className="bg-[#111111] text-white pt-16 pb-8 mt-auto">
+    <footer id="footer" className="bg-[#111111] text-white pt-16 pb-8 mt-auto">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Верхняя часть с колонками */}
