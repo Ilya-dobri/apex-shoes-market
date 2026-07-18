@@ -1,8 +1,12 @@
 import Catalog from '@/components/Catalog'
-import React from 'react'
+import React, { Suspense } from 'react'
 
 const page = () => {
-  return <Catalog />
+  return <div>
+     <Suspense fallback={<div>Загрузка...</div>}>
+      <Catalog />
+    </Suspense>
+  </div>
     
       
     
