@@ -193,7 +193,7 @@ const sortedShoes = [...filterShoes].sort((a, b) => {
                   Выбрано
                 </span>
                 <span className="text-sm text-indigo-600 font-bold">
-                  {Array.isArray(isSlider) ? isSlider[0] : isSlider} ₽
+                  {Array.isArray(isSlider) ? isSlider[0] : isSlider} ₴
                 </span>
               </div>
 

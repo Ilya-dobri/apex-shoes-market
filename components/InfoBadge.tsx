@@ -76,7 +76,7 @@ const InfoBadge = () => {
                   Бесплатная доставка
                 </span>
                 <span className="text-[12px] md:text-[13px] text-zinc-500 mt-0.5">
-                  от 7 000 ₽
+                  от 7 000 ₴
                 </span>
               </div>
             </div>

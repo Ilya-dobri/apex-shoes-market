@@ -72,7 +72,7 @@ const AddProductForm = () => {
         <div className="flex gap-3">
           <input 
             type="number" 
-            placeholder="Цена (₽)" 
+            placeholder="Цена (₴)" 
             value={price}
             onChange={(e) => setPrice(e.target.value)}
             required 

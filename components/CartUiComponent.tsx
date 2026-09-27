@@ -64,7 +64,7 @@ const CartUiComponent = ({ order }: CartUiComponentType) => {
 
         <span className="font-bold text-[20px] text-[#222]">
           {order.totalAmount
-            ? `${order.totalAmount.toLocaleString("ru-RU")} ₽`
+            ? `${order.totalAmount.toLocaleString("ru-RU")} ₴`
             : "---"}
         </span>
       </div>

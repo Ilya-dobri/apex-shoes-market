@@ -124,7 +124,7 @@ const Shoes = ({
       <div className="flex items-center justify-between mt-auto">
         
         <span className="font-extrabold text-base text-gray-900 whitespace-nowrap">
-          {price.toLocaleString("ru-RU")} ₽{" "}
+          {price.toLocaleString("ru-RU")} ₴{" "}
          
         </span>
 

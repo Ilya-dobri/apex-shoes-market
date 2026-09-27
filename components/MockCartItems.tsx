@@ -160,7 +160,7 @@ export default function MockCartItems() {
                     
                     {/* Цена */}
                     <div className="text-xl font-bold text-gray-900">
-                      {item.price.toLocaleString('ru-RU')} ₽
+                      {item.price.toLocaleString('ru-RU')} ₴
                     </div>
                   </div>
                 </div>
@@ -176,7 +176,7 @@ export default function MockCartItems() {
               <div className="space-y-4 text-gray-600 mb-6">
                 <div className="flex justify-between">
                   <span>Товары ({items.length})</span>
-                  <span>{totalPrice.toLocaleString('ru-RU')} ₽</span>
+                  <span>{totalPrice.toLocaleString('ru-RU')} ₴</span>
                 </div>
                 <div className="flex justify-between">
                   <span>Доставка</span>
@@ -188,7 +188,7 @@ export default function MockCartItems() {
                 <div className="flex justify-between items-end">
                   <span className="text-lg font-medium text-gray-900">Итого</span>
                   <span className="text-2xl font-bold text-gray-900">
-                    {totalPrice.toLocaleString('ru-RU')} ₽
+                    {totalPrice.toLocaleString('ru-RU')} ₴
                   </span>
                 </div>
               </div>

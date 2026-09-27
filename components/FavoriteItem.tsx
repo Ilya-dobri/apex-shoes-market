@@ -52,7 +52,7 @@ const FavoriteItem = ({ cart, product, size, onRemove , rating }: FavoriteProduc
           {product.title}
         </h3>
         <p className="font-bold text-[18px] text-[#222]">
-          {product.price.toLocaleString("ru-RU")} ₽
+          {product.price.toLocaleString("ru-RU")} ₴
         </p>
         <p>
           <span className="text-yellow-400">

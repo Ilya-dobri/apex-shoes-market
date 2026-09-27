@@ -219,7 +219,7 @@ const SearchAndButton = () => {
                           </span>
 
                           <span className="text-gray-500 font-semibold text-xs">
-                            {product.price} ₽
+                            {product.price} ₴
                           </span>
 
                           <span className="text-amber-500 text-xs flex items-center gap-1 font-medium">
